@@ -1,0 +1,3 @@
+C:/Users/Samuel/Documents/GitHub/graphics/build_mingw/CMakeFiles/raymarched_sphere.dir
+C:/Users/Samuel/Documents/GitHub/graphics/build_mingw/CMakeFiles/edit_cache.dir
+C:/Users/Samuel/Documents/GitHub/graphics/build_mingw/CMakeFiles/rebuild_cache.dir
