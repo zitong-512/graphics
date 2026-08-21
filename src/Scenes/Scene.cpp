@@ -5,8 +5,8 @@
 
   Scene::Scene()
       : camera_(
-            {0.0f, 0.0f, 0.0f},
-            {0.0f, 0.0f, -1.0f},
+            {0.0f, 2.0f, 0.0f}, // Position
+            {0.0f, -0.5f, -1.0f}, // Direction
             {0.0f, 1.0f, 0.0f},
             8.0f / 3.0f,
             2.0f
