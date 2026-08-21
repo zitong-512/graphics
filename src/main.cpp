@@ -1,5 +1,5 @@
 #include "Renders/Raymarching.hpp"
-#include "Shaders/DiffuseShader.hpp"
+#include "Shaders/BlinnPhong.hpp"
 
 #include <algorithm>
 #include <cstdint>
@@ -16,10 +16,10 @@ namespace {
 int main() {
     int width = 800;
     int height = 600;
-    char* outputPath = "imageeee.ppm";
+    const char* outputPath = "imageeee.ppm";
 
     Scene scene;
-    DiffuseShader shader;
+    BlinnPhong shader;
     Raymarching raymarching;
 
     std::vector<std::uint8_t> pixels;
@@ -42,6 +42,6 @@ int main() {
         reinterpret_cast<const char*>(pixels.data()),
         static_cast<std::streamsize>(pixels.size())
     );
-
+    
     return 0;
 }
