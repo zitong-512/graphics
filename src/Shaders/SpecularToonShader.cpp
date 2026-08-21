@@ -1,6 +1,6 @@
-#include "Shaders/SpecularShader.hpp"
+#include "Shaders/SpecularToonShader.hpp"
 
-Vec3 SpecularShader::shade(const Hit& hit) const {
+Vec3 SpecularToonShader::shade(const Hit& hit) const {
 
     Vec3 l = normalize(positionLight_ - hit.point);
     Vec3 n = normalize(hit.normal);
@@ -9,6 +9,12 @@ Vec3 SpecularShader::shade(const Hit& hit) const {
 
     float cos = dot(r, v) * dot(r, v) * dot(r, v) * dot(r, v) * dot(r, v) * dot(r, v) * dot(r, v)* dot(r, v) * dot(r, v) * dot(r, v) * dot(r, v) * dot(r, v)* dot(r, v) * dot(r, v) * dot(r, v) * dot(r, v)* dot(r, v) * dot(r, v) * dot(r, v) * dot(r, v)* dot(r, v)* dot(r, v) * dot(r, v) * dot(r, v)* dot(r, v)* dot(r, v)* dot(r, v)* dot(r, v)* dot(r, v)* dot(r, v)* dot(r, v)* dot(r, v)* dot(r, v);
     
+    if (cos > 0.5) {
+        cos = 0.9;
+    }
+    else {
+        cos = 0;
+    }
     return {
         cos * ambientLight_.x,
         cos * ambientLight_.y,
