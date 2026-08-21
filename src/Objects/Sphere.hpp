@@ -1,8 +1,9 @@
 #pragma once
 
+#include "Objects/Object.hpp"
 #include "Utilities/Vec3.hpp"
 
-class Sphere {
+class Sphere : public Object {
 public:
     Sphere(Vec3 center, float radius) : center_(center), radius_(radius) {}
 

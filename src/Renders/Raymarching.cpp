@@ -6,17 +6,14 @@ Vec3 Raymarching::color(const Scene& scene, const Shader& shader,
 
     for (int step = 0; step < maxSteps_; ++step) {
         const Vec3 point = ray.at(traveled);
-        const float distance = scene.sdf(point);
+        Hit hit = scene.sdf(point);
 
-        if (distance <= surfaceEpsilon_) {
-            Hit hit;
-            hit.t = traveled;
-            hit.point = point;
-            hit.normal = scene.normal(point);
+        if (hit.t <= surfaceEpsilon_) {
+            hit.normal = scene.normal(point, *hit.object);
             return shader.shade(hit);
         }
 
-        traveled += distance;
+        traveled += hit.t;
         if (traveled > maxDistance_) {
             return scene.background();
         }

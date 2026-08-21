@@ -1,7 +1,7 @@
 CMakeFiles/raymarched_sphere.dir/src/Scenes/Scene.cpp.obj: \
  C:\Users\Samuel\Documents\GitHub\graphics\src\Scenes\Scene.cpp \
  C:/Users/Samuel/Documents/GitHub/graphics/src/Scenes/Scene.hpp \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Objects/Sphere.hpp \
+ C:/Users/Samuel/Documents/GitHub/graphics/src/Lights/Light.hpp \
  C:/Users/Samuel/Documents/GitHub/graphics/src/Utilities/Vec3.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/cmath \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/requires_hosted.h \
@@ -63,5 +63,91 @@ CMakeFiles/raymarched_sphere.dir/src/Scenes/Scene.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/tr1/poly_hermite.tcc \
  C:/msys64/ucrt64/include/c++/16.1.0/tr1/poly_laguerre.tcc \
  C:/msys64/ucrt64/include/c++/16.1.0/tr1/riemann_zeta.tcc \
+ C:/msys64/ucrt64/include/c++/16.1.0/memory \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/memoryfwd.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/allocator.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/new_allocator.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/new \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/exception.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/new_except.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/new_throw.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_tempbuf.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_construct.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_uninitialized.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/ext/alloc_traits.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/alloc_traits.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_raw_storage_iter.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/align.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/uses_allocator.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/unique_ptr.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/tuple \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/invoke.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/functional_hash.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/hash_bytes.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/shared_ptr.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/iosfwd \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stringfwd.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/postypes.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/cwchar \
+ C:/msys64/ucrt64/include/wchar.h \
+ C:/msys64/ucrt64/include/corecrt_stdio_config.h \
+ C:/msys64/ucrt64/include/corecrt_wconio.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stddef.h \
+ C:/msys64/ucrt64/include/stddef.h \
+ C:/msys64/ucrt64/include/sec_api/wconio_s.h \
+ C:/msys64/ucrt64/include/corecrt_wctype.h \
+ C:/msys64/ucrt64/include/_mingw_off_t.h \
+ C:/msys64/ucrt64/include/_mingw_stat64.h \
+ C:/msys64/ucrt64/include/swprintf.inl \
+ C:/msys64/ucrt64/include/sec_api/wchar_s.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/shared_ptr_base.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/typeinfo \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/allocated_ptr.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/refwrap.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/ext/aligned_buffer.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/ext/atomicity.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/gthr.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
+ C:/msys64/ucrt64/include/pthread.h C:/msys64/ucrt64/include/sys/types.h \
+ C:/msys64/ucrt64/include/process.h \
+ C:/msys64/ucrt64/include/corecrt_startup.h \
+ C:/msys64/ucrt64/include/signal.h \
+ C:/msys64/ucrt64/include/pthread_signal.h \
+ C:/msys64/ucrt64/include/time.h C:/msys64/ucrt64/include/sys/timeb.h \
+ C:/msys64/ucrt64/include/sec_api/sys/timeb_s.h \
+ C:/msys64/ucrt64/include/_timeval.h \
+ C:/msys64/ucrt64/include/pthread_time.h \
+ C:/msys64/ucrt64/include/pthread_compat.h \
+ C:/msys64/ucrt64/include/sched.h \
+ C:/msys64/ucrt64/include/pthread_unistd.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/ext/concurrence.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/exception \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/exception_ptr.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/cxxabi_init_exception.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/nested_exception.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/shared_ptr_atomic.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/atomic_base.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/atomic_lockfree_defines.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/backward/auto_ptr.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/pstl/glue_memory_defs.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/pstl/execution_defs.h \
+ C:/Users/Samuel/Documents/GitHub/graphics/src/Objects/Object.hpp \
+ C:/Users/Samuel/Documents/GitHub/graphics/src/Materials/Material.hpp \
+ C:/Users/Samuel/Documents/GitHub/graphics/src/Shaders/Shader.hpp \
  C:/Users/Samuel/Documents/GitHub/graphics/src/Utilities/Camera.hpp \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Utilities/Ray.hpp
+ C:/Users/Samuel/Documents/GitHub/graphics/src/Utilities/Ray.hpp \
+ C:/Users/Samuel/Documents/GitHub/graphics/src/Utilities/Hit.hpp \
+ C:/msys64/ucrt64/include/c++/16.1.0/vector \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_vector.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/initializer_list \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_bvector.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/range_access.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/erase_if.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/vector.tcc \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/memory_resource.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/cstddef \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/uses_allocator_args.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/utility \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_relops.h
