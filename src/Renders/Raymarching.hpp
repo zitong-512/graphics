@@ -1,9 +1,10 @@
 #pragma once
 
+#include <optional>
 #include "Scenes/Scene.hpp"
-#include "Shaders/Shader.hpp"
 #include "Utilities/Hit.hpp"
 #include "Utilities/Ray.hpp"
+#include "Lights/PointLight.hpp"
 
 class Raymarching {
 public:
@@ -13,7 +14,11 @@ public:
           maxDistance_(maxDistance),
           surfaceEpsilon_(surfaceEpsilon) {}
 
-    Vec3 color(const Scene& scene, const Shader& shader, const Ray& ray) const;
+    std::optional<Hit> raymarch(const Scene& scene, const Ray& ray, float maxDistance) const;
+    std::optional<Hit> raymarch(const Scene& scene, const Ray& ray) const;
+
+    bool shadow(const Scene& scene, const Hit& hit, const PointLight& light) const;
+    Vec3 color(const Scene& scene, const Ray& ray) const;
 
 private:
     int maxSteps_;

@@ -1,5 +1,5 @@
 #include "Renders/Raymarching.hpp"
-#include "Shaders/BlinnPhong.hpp"
+#include "Scenes/Presets/Primitives/BlinnPhongSphereScene.hpp"
 
 #include <algorithm>
 #include <cstdint>
@@ -14,12 +14,11 @@ namespace {
 }
 
 int main() {
-    int width = 800;
-    int height = 600;
-    const char* outputPath = "imageeee.ppm";
+    constexpr int width = 800;
+    constexpr int height = 600;
 
-    Scene scene;
-    BlinnPhong shader;
+    const ScenePreset& preset = scenes::blinnPhongSphere::preset;
+    const Scene& scene = preset.scene();
     Raymarching raymarching;
 
     std::vector<std::uint8_t> pixels;
@@ -28,7 +27,7 @@ int main() {
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
             Ray ray = scene.camera().rayForPixel(x, y, width, height);
-            Vec3 color = raymarching.color(scene, shader, ray);
+            const Vec3 color = raymarching.color(scene, ray);
 
             pixels.push_back(toByte(color.x));
             pixels.push_back(toByte(color.y));
@@ -36,7 +35,13 @@ int main() {
         }
     }
 
-    std::ofstream output(outputPath, std::ios::binary);
+    std::filesystem::create_directories(preset.outputPath().parent_path());
+    std::ofstream output(preset.outputPath(), std::ios::binary);
+    if (!output) {
+        std::cerr << "Unable to open output file: "
+                  << preset.outputPath() << '\n';
+        return 1;
+    }
     output << "P6\n" << width << ' ' << height << "\n255\n";
     output.write(
         reinterpret_cast<const char*>(pixels.data()),

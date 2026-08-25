@@ -1,47 +1,32 @@
 #include "Scenes/Scene.hpp"
 
-  #include <limits>
-  #include <memory>
+#include <limits>
+#include <utility>
 
-  Scene::Scene()
-      : camera_(
-            {0.0f, 2.0f, 0.0f}, // Position
-            {0.0f, -0.5f, -1.0f}, // Direction
-            {0.0f, 1.0f, 0.0f},
-            8.0f / 3.0f,
-            2.0f
-        )
-  {
-      objects_.push_back(
-          std::make_shared<Donut>(
-              Vec3{0.0f, 0.0f, -3.0f},
-              1.0f,
-              0.3f
-          )
-      );
-  }
+Scene::Scene(Camera camera,
+             Vec3 background,
+             std::vector<LightPtr> lights,
+             std::vector<ObjectPtr> objects)
+    : camera_(std::move(camera)),
+      background_(background),
+      lights_(std::move(lights)),
+      objects_(std::move(objects)) {}
 
-  Hit Scene::sdf(const Vec3& point) const {
-      float closestDistance = std::numeric_limits<float>::infinity();
-      const Object* closestObject = nullptr;
+std::pair<float, const Object*> Scene::sdf(const Vec3& point) const {
+    float closestDistance = std::numeric_limits<float>::infinity();
+    const Object* closestObject = nullptr;
 
-      for (const auto& object : objects_) {
-          const float distance = object->sdf(point);
+    for (const ObjectPtr& object : objects_) {
+        if (!object) {
+            continue;
+        }
 
-          if (distance < closestDistance) {
-              closestDistance = distance;
-              closestObject = object.get();
-          }
-      }
+        const float distance = object->sdf(point);
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestObject = object.get();
+        }
+    }
 
-      return {
-          closestDistance,
-          point,
-          Vec3{},
-          closestObject
-      };
-  }
-
-  Vec3 Scene::normal(const Vec3& point, const Object& object) const {
-      return object.normal(point);
-  }
+    return {closestDistance, closestObject};
+}

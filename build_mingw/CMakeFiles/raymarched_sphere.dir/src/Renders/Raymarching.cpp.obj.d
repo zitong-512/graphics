@@ -1,6 +1,6 @@
 CMakeFiles/raymarched_sphere.dir/src/Renders/Raymarching.cpp.obj: \
- C:\Users\Samuel\Documents\GitHub\graphics\src\Renders\Raymarching.cpp \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Renders/Raymarching.hpp \
+ C:\Users\Samuel\DOCUME~1\Classes\PROGRA~3\Z\graphics\src\Renders\Raymarching.cpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Renders/Raymarching.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/optional \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/version.h \
  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -34,9 +34,9 @@ CMakeFiles/raymarched_sphere.dir/src/Renders/Raymarching.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/concept_check.h \
  C:/msys64/ucrt64/include/c++/16.1.0/debug/assertions.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/utility.h \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Scenes/Scene.hpp \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Lights/Light.hpp \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Utilities/Vec3.hpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Scenes/Scene.hpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Lights/Light.hpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Vec3.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/cmath \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/cpp_type_traits.h \
@@ -137,12 +137,16 @@ CMakeFiles/raymarched_sphere.dir/src/Renders/Raymarching.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/backward/auto_ptr.h \
  C:/msys64/ucrt64/include/c++/16.1.0/pstl/glue_memory_defs.h \
  C:/msys64/ucrt64/include/c++/16.1.0/pstl/execution_defs.h \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Objects/Object.hpp \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Materials/Material.hpp \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Shaders/Shader.hpp \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Utilities/Camera.hpp \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Utilities/Ray.hpp \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Utilities/Hit.hpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Objects/Object.hpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Materials/Material.hpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Textures/Texture.hpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Vec2.hpp \
+ C:/msys64/ucrt64/include/c++/16.1.0/utility \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_relops.h \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Shaders/Shader.hpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Camera.hpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Ray.hpp \
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Hit.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/vector \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_vector.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_bvector.h \
@@ -152,6 +156,4 @@ CMakeFiles/raymarched_sphere.dir/src/Renders/Raymarching.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/memory_resource.h \
  C:/msys64/ucrt64/include/c++/16.1.0/cstddef \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/uses_allocator_args.h \
- C:/msys64/ucrt64/include/c++/16.1.0/utility \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_relops.h \
- C:/Users/Samuel/Documents/GitHub/graphics/src/Lights/PointLight.hpp
+ C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Lights/PointLight.hpp

@@ -1,24 +1,29 @@
 #pragma once
 
-#include <memory>
-#include <vector>
-#include "Objects/Sphere.hpp"
-#include "Objects/Donut.hpp"
+#include "Lights/Light.hpp"
+#include "Objects/Object.hpp"
 #include "Utilities/Camera.hpp"
-#include "Utilities/Hit.hpp"
+
+#include <utility>
+#include <vector>
 
 class Scene {
 public:
-    Scene();
+    Scene(Camera camera,
+          Vec3 background,
+          std::vector<LightPtr> lights,
+          std::vector<ObjectPtr> objects);
 
-    Hit sdf(const Vec3& point) const;
-    Vec3 normal(const Vec3& point, const Object& object) const;
-    Vec3 background() const { return {0.05f, 0.07f, 0.12f}; }
+    std::pair<float, const Object*> sdf(const Vec3& point) const;
+
+    const Vec3& background() const { return background_; }
     const Camera& camera() const { return camera_; }
+    const std::vector<LightPtr>& lights() const { return lights_; }
+    const std::vector<ObjectPtr>& objects() const { return objects_; }
 
 private:
     Camera camera_;
-    std::vector<std::shared_ptr<Object>> objects_;
-    //std::vector<std::shared_ptr<Light>> lights_;
     Vec3 background_;
+    std::vector<LightPtr> lights_;
+    std::vector<ObjectPtr> objects_;
 };

@@ -32,12 +32,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-windres.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake"
-  "C:/Users/Samuel/Documents/GitHub/graphics/CMakeLists.txt"
+  "C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/CMakeLists.txt"
   "CMakeFiles/4.2.0-rc1/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.2.0-rc1/CMakeRCCompiler.cmake"
   "CMakeFiles/4.2.0-rc1/CMakeSystem.cmake"
-  "CMakeFiles/VerifyGlobs.cmake"
-  "CMakeFiles/cmake.verify_globs"
   )
 
 # The corresponding makefile is:

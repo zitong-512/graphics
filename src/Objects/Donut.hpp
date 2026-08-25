@@ -3,13 +3,21 @@
 #include "Utilities/Vec3.hpp"
 #include "Objects/Object.hpp"
 
+#include <utility>
+
 class Donut : public Object {
 public:
-    Donut(Vec3 center, float big_radius, float small_radius) : center_(center), big_radius_(big_radius), small_radius_(small_radius) {}
+    Donut(Vec3 center,
+          float bigRadius,
+          float smallRadius,
+          Material material,
+          std::shared_ptr<const Shader> shader)
+        : Object(std::move(material), std::move(shader)),
+          center_(center),
+          big_radius_(bigRadius),
+          small_radius_(smallRadius) {}
 
-
-    float sdf(const Vec3& point) const;
-    Vec3 normal(const Vec3& point) const;
+    float sdf(const Vec3& point) const override;
 
 private:
     Vec3 center_;

@@ -1,23 +1,66 @@
 #include "Renders/Raymarching.hpp"
 
-Vec3 Raymarching::color(const Scene& scene, const Shader& shader,
-                        const Ray& ray) const {
+std::optional<Hit> Raymarching::raymarch(const Scene& scene, const Ray& ray, float maxDistance) const {
     float traveled = 0.0f;
 
     for (int step = 0; step < maxSteps_; ++step) {
         const Vec3 point = ray.at(traveled);
-        Hit hit = scene.sdf(point);
+        const auto [distance, object] = scene.sdf(point);
 
-        if (hit.t <= surfaceEpsilon_) {
-            hit.normal = scene.normal(point, *hit.object);
-            return shader.shade(hit);
+        if (distance <= surfaceEpsilon_) {
+            Hit hit;
+            hit.t = traveled;
+            hit.point = point;
+            hit.normal = object->normal(point);
+            hit.uv = object->textureCoordinates(point);
+            hit.object = object;
+            return hit;
         }
 
-        traveled += hit.t;
-        if (traveled > maxDistance_) {
-            return scene.background();
+        traveled += distance;
+        if (traveled > maxDistance) {
+            return std::nullopt;
         }
     }
+    return std::nullopt;
+}
 
-    return scene.background();
+std::optional<Hit> Raymarching::raymarch(const Scene& scene, const Ray& ray) const {
+    return raymarch(scene, ray, maxDistance_);
+}
+
+bool Raymarching::shadow(const Scene&,
+                         const Hit&,
+                         const PointLight&) const {
+    return false;
+}
+
+Vec3 Raymarching::color(const Scene& scene, const Ray& ray) const {
+    const std::optional<Hit> hit = raymarch(scene, ray);
+    if (!hit || hit->object == nullptr) {
+        return scene.background();
+    }
+
+    std::vector<LightPtr> visibleLights;
+    visibleLights.reserve(scene.lights().size());
+
+    for (const LightPtr& light : scene.lights()) {
+        if (!light) {
+            continue;
+        }
+
+        const auto* pointLight = dynamic_cast<const PointLight*>(light.get());
+        if (pointLight != nullptr && shadow(scene, *hit, *pointLight)) {
+            continue;
+        }
+
+        visibleLights.push_back(light);
+    }
+
+    return hit->object->shader().shade(
+        *hit,
+        hit->object->material(),
+        scene.camera(),
+        visibleLights
+    );
 }

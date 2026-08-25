@@ -8,7 +8,10 @@ public:
                   Vec3 ambientLight = {0.55f, 0.55f, 0.85f},
                   Vec3 positionLight = {1.0f, 1.0f, 1.0f}, 
                   Vec3 cameraPosition = {0.0f, 0.0f, 0.0f})
-        : objectColor_(objectColor), ambientLight_(ambientLight), positionLight_(positionLight) {}
+        : objectColor_(objectColor),
+          ambientLight_(ambientLight),
+          positionLight_(positionLight),
+          cameraPosition_(cameraPosition) {}
 
     Vec3 shade(const Hit& hit) const override;
         
