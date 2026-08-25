@@ -13,8 +13,15 @@ CheckerboardTexture::CheckerboardTexture(Vec3 color0,
             "Checkerboard texture tile size must be positive"
         );
     }
-}
+} 
 
-Vec3 CheckerboardTexture::sample(const Vec2&) const {
-    return {};
+Vec3 CheckerboardTexture::sample(const Vec2& uv) const {
+    int x = static_cast<int>(std::round(uv.x / tileSize_));
+    int y = static_cast<int>(std::round(uv.y / tileSize_));
+
+    if ((x + y) % 2 == 0) {
+        return color0_;
+    } else {
+        return color1_;
+    }
 }

@@ -29,10 +29,18 @@ std::optional<Hit> Raymarching::raymarch(const Scene& scene, const Ray& ray) con
     return raymarch(scene, ray, maxDistance_);
 }
 
-bool Raymarching::shadow(const Scene&,
-                         const Hit&,
-                         const PointLight&) const {
-    return false;
+bool Raymarching::shadow(const Scene& scene,
+                         const Hit& hit,
+                         const PointLight& light) const {
+    Vec3 toLight = light.position() - hit.point;
+        if (length(light.position() - toLight) <= surfaceEpsilon_) {
+            return false;
+        }
+
+    Ray ShadowRay = {hit.point + hit.normal * (2.0f * surfaceEpsilon_), toLight};
+
+    return raymarch(scene, ShadowRay).has_value();
+
 }
 
 Vec3 Raymarching::color(const Scene& scene, const Ray& ray) const {
