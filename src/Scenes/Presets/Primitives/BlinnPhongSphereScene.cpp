@@ -23,6 +23,7 @@ ScenePreset scenes::blinnPhongSphere::makeScene() {
         std::make_shared<BlinnPhongShader>()
     );
 
+
     return blinnPhongPrimitive::makeScene(
         std::move(sphere),
         "BlinnPhongSphere.ppm"
