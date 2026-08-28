@@ -27,8 +27,6 @@ events:
     names:
       - "mingw32-make.exe"
     candidate_directories:
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -70,10 +68,6 @@ events:
       - "/MinGW/bin/"
       - "/REGISTRY-NOTFOUND/MinGW/bin/"
     searched_directories:
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/mingw32-make.exe.com"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/mingw32-make.exe"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/mingw32-make.exe.com"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/mingw32-make.exe"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mingw32-make.exe.com"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mingw32-make.exe"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mingw32-make.exe.com"
@@ -148,8 +142,6 @@ events:
     found: "C:/msys64/ucrt64/bin/mingw32-make.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -262,8 +254,6 @@ events:
     found: "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -369,7 +359,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
       
       The CXX compiler identification is GNU, found in:
-        C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/build_mingw/CMakeFiles/4.2.0-rc1/CompilerIdCXX/a.exe
+        C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/build_mingw/CMakeFiles/4.2.0-rc1/CompilerIdCXX/a.exe
       
   -
     kind: "find-v1"
@@ -392,8 +382,6 @@ events:
       - "ar"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -434,8 +422,6 @@ events:
     found: "C:/msys64/ucrt64/bin/ar.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -542,8 +528,6 @@ events:
       - "ranlib"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -584,8 +568,6 @@ events:
     found: "C:/msys64/ucrt64/bin/ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -692,8 +674,6 @@ events:
       - "strip"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -734,8 +714,6 @@ events:
     found: "C:/msys64/ucrt64/bin/strip.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -842,8 +820,6 @@ events:
       - "ld"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -884,8 +860,6 @@ events:
     found: "C:/msys64/ucrt64/bin/ld.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -992,8 +966,6 @@ events:
       - "nm"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -1034,8 +1006,6 @@ events:
     found: "C:/msys64/ucrt64/bin/nm.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -1142,8 +1112,6 @@ events:
       - "objdump"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -1184,8 +1152,6 @@ events:
     found: "C:/msys64/ucrt64/bin/objdump.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -1292,8 +1258,6 @@ events:
       - "objcopy"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -1334,8 +1298,6 @@ events:
     found: "C:/msys64/ucrt64/bin/objcopy.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -1442,8 +1404,6 @@ events:
       - "readelf"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -1484,8 +1444,6 @@ events:
     found: "C:/msys64/ucrt64/bin/readelf.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -1592,8 +1550,6 @@ events:
       - "dlltool"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -1634,8 +1590,6 @@ events:
     found: "C:/msys64/ucrt64/bin/dlltool.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -1742,8 +1696,6 @@ events:
       - "addr2line"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -1784,8 +1736,6 @@ events:
     found: "C:/msys64/ucrt64/bin/addr2line.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -1892,8 +1842,6 @@ events:
       - "tapi"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -1933,12 +1881,6 @@ events:
       - "C:/msys64/ucrt64/bin/tapi.com"
       - "C:/msys64/ucrt64/bin/tapi.exe"
       - "C:/msys64/ucrt64/bin/tapi"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/tapi.com"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/tapi.exe"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/tapi"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/tapi.com"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/tapi.exe"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/tapi"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi.com"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi.exe"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
@@ -2047,8 +1989,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -2158,8 +2098,6 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -2199,12 +2137,6 @@ events:
       - "C:/msys64/ucrt64/bin/gcc-ar-16.1.com"
       - "C:/msys64/ucrt64/bin/gcc-ar-16.1.exe"
       - "C:/msys64/ucrt64/bin/gcc-ar-16.1"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ar-16.1.com"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ar-16.1.exe"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ar-16.1"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ar-16.1.com"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ar-16.1.exe"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ar-16.1"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-16.1.com"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-16.1.exe"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-16.1"
@@ -2313,12 +2245,6 @@ events:
       - "C:/msys64/ucrt64/bin/gcc-ar-16.com"
       - "C:/msys64/ucrt64/bin/gcc-ar-16.exe"
       - "C:/msys64/ucrt64/bin/gcc-ar-16"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ar-16.com"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ar-16.exe"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ar-16"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ar-16.com"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ar-16.exe"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ar-16"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-16.com"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-16.exe"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-16"
@@ -2427,12 +2353,6 @@ events:
       - "C:/msys64/ucrt64/bin/gcc-ar16.com"
       - "C:/msys64/ucrt64/bin/gcc-ar16.exe"
       - "C:/msys64/ucrt64/bin/gcc-ar16"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ar16.com"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ar16.exe"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ar16"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ar16.com"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ar16.exe"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ar16"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar16.com"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar16.exe"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar16"
@@ -2542,8 +2462,6 @@ events:
     found: "C:/msys64/ucrt64/bin/gcc-ar.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -2653,8 +2571,6 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -2694,12 +2610,6 @@ events:
       - "C:/msys64/ucrt64/bin/gcc-ranlib-16.1.com"
       - "C:/msys64/ucrt64/bin/gcc-ranlib-16.1.exe"
       - "C:/msys64/ucrt64/bin/gcc-ranlib-16.1"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ranlib-16.1.com"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ranlib-16.1.exe"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ranlib-16.1"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ranlib-16.1.com"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ranlib-16.1.exe"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ranlib-16.1"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-16.1.com"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-16.1.exe"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-16.1"
@@ -2808,12 +2718,6 @@ events:
       - "C:/msys64/ucrt64/bin/gcc-ranlib-16.com"
       - "C:/msys64/ucrt64/bin/gcc-ranlib-16.exe"
       - "C:/msys64/ucrt64/bin/gcc-ranlib-16"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ranlib-16.com"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ranlib-16.exe"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ranlib-16"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ranlib-16.com"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ranlib-16.exe"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ranlib-16"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-16.com"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-16.exe"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-16"
@@ -2922,12 +2826,6 @@ events:
       - "C:/msys64/ucrt64/bin/gcc-ranlib16.com"
       - "C:/msys64/ucrt64/bin/gcc-ranlib16.exe"
       - "C:/msys64/ucrt64/bin/gcc-ranlib16"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ranlib16.com"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ranlib16.exe"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/gcc-ranlib16"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ranlib16.com"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ranlib16.exe"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/gcc-ranlib16"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib16.com"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib16.exe"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib16"
@@ -3037,8 +2935,6 @@ events:
     found: "C:/msys64/ucrt64/bin/gcc-ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -3147,8 +3043,6 @@ events:
       - "windres"
       - "windres"
     candidate_directories:
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Program Files/Python314/Scripts/"
@@ -3198,12 +3092,6 @@ events:
       - "C:/Program Files (x86)/RaymarchedSphere/sbin/"
       - "C:/Program Files (x86)/RaymarchedSphere/"
     searched_directories:
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/windres.com"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/windres.exe"
-      - "C:/Users/Samuel/.codex/tmp/arg0/codex-arg0BrkGDW/windres"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/windres.com"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/windres.exe"
-      - "C:/Users/Samuel/.codex/packages/standalone/releases/0.149.0-x86_64-pc-windows-msvc/codex-path/windres"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/windres.com"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/windres.exe"
       - "C:/Users/Samuel/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/windres"
@@ -3313,8 +3201,6 @@ events:
     found: "C:/msys64/ucrt64/bin/windres.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\Samuel\\.codex\\tmp\\arg0\\codex-arg0BrkGDW"
-        - "C:\\Users\\Samuel\\.codex\\packages\\standalone\\releases\\0.149.0-x86_64-pc-windows-msvc\\codex-path"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
         - "c:\\Users\\Samuel\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\Program Files\\Python314\\Scripts\\"
@@ -3415,8 +3301,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-6wgl4b"
-      binary: "C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-6wgl4b"
+      source: "C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-eehydl"
+      binary: "C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-eehydl"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -3426,13 +3312,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-6wgl4b'
+        Change Dir: 'C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-eehydl'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_1be30/fast
-        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_1be30.dir\\build.make CMakeFiles/cmTC_1be30.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-6wgl4b'
-        Building CXX object CMakeFiles/cmTC_1be30.dir/CMakeCXXCompilerABI.cpp.obj
-        C:\\msys64\\ucrt64\\bin\\c++.exe   -v -o CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_5ae99/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5ae99.dir\\build.make CMakeFiles/cmTC_5ae99.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-eehydl'
+        Building CXX object CMakeFiles/cmTC_5ae99.dir/CMakeCXXCompilerABI.cpp.obj
+        C:\\msys64\\ucrt64\\bin\\c++.exe   -v -o CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe
         Target: x86_64-w64-mingw32
@@ -3440,8 +3326,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.0 (Rev5, Built by MSYS2 project) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_1be30.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_1be30.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccRkmadc.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5ae99.dir\\'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_5ae99.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccC5xMOA.s
         GNU C++20 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 16.1.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.27-GMP
         
@@ -3467,14 +3353,14 @@ events:
          C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed
         End of search list.
         Compiler executable checksum: c17fb94a142b10fdb3ae88ea0e837cbf
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_1be30.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccRkmadc.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5ae99.dir\\'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccC5xMOA.s
         GNU assembler version 2.46 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46
         COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_1be30.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_1be30.dir\\link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_5ae99.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5ae99.dir\\link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe
         COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe
@@ -3485,16 +3371,16 @@ events:
         gcc version 16.1.0 (Rev5, Built by MSYS2 project) 
         COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1be30.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_1be30.'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccYPBb6z.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_1be30.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_1be30.dir/objects.a --no-whole-archive --out-implib libcmTC_1be30.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5ae99.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_5ae99.'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Samuel\\AppData\\Local\\Temp\\cc6e9XNN.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5ae99.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5ae99.dir/objects.a --no-whole-archive --out-implib libcmTC_5ae99.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
         collect2 version 16.1.0
-        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccYPBb6z.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_1be30.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_1be30.dir/objects.a --no-whole-archive --out-implib libcmTC_1be30.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
+        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Samuel\\AppData\\Local\\Temp\\cc6e9XNN.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5ae99.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5ae99.dir/objects.a --no-whole-archive --out-implib libcmTC_5ae99.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
         GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1be30.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_1be30.'
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_1be30.dir/objects.a
-        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_1be30.dir/objects.a @CMakeFiles\\cmTC_1be30.dir\\objects1.rsp
-        C:\\msys64\\ucrt64\\bin\\c++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_1be30.dir/objects.a -Wl,--no-whole-archive -o cmTC_1be30.exe -Wl,--out-implib,libcmTC_1be30.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        mingw32-make[1]: Leaving directory 'C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-6wgl4b'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5ae99.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_5ae99.'
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_5ae99.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_5ae99.dir/objects.a @CMakeFiles\\cmTC_5ae99.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\c++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_5ae99.dir/objects.a -Wl,--no-whole-archive -o cmTC_5ae99.exe -Wl,--out-implib,libcmTC_5ae99.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make[1]: Leaving directory 'C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-eehydl'
         
       exitCode: 0
   -
@@ -3533,13 +3419,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-6wgl4b']
+        ignore line: [Change Dir: 'C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-eehydl']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_1be30/fast]
-        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_1be30.dir\\build.make CMakeFiles/cmTC_1be30.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-6wgl4b']
-        ignore line: [Building CXX object CMakeFiles/cmTC_1be30.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\c++.exe   -v -o CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_5ae99/fast]
+        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5ae99.dir\\build.make CMakeFiles/cmTC_5ae99.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/build_mingw/CMakeFiles/CMakeScratch/TryCompile-eehydl']
+        ignore line: [Building CXX object CMakeFiles/cmTC_5ae99.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [C:\\msys64\\ucrt64\\bin\\c++.exe   -v -o CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe]
         ignore line: [Target: x86_64-w64-mingw32]
@@ -3547,8 +3433,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.0 (Rev5  Built by MSYS2 project) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_1be30.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_1be30.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccRkmadc.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5ae99.dir\\']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_5ae99.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccC5xMOA.s]
         ignore line: [GNU C++20 (Rev5  Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 16.1.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -3574,8 +3460,8 @@ events:
         ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: c17fb94a142b10fdb3ae88ea0e837cbf]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_1be30.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccRkmadc.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5ae99.dir\\']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccC5xMOA.s]
         ignore line: [GNU assembler version 2.46 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46]
         ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
@@ -3586,9 +3472,9 @@ events:
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_1be30.dir\\CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_1be30.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_1be30.dir\\link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_5ae99.dir\\CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_5ae99.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5ae99.dir\\link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe]
@@ -3606,13 +3492,13 @@ events:
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1be30.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_1be30.']
-        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccYPBb6z.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_1be30.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_1be30.dir/objects.a --no-whole-archive --out-implib libcmTC_1be30.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5ae99.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_5ae99.']
+        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Samuel\\AppData\\Local\\Temp\\cc6e9XNN.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5ae99.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5ae99.dir/objects.a --no-whole-archive --out-implib libcmTC_5ae99.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccYPBb6z.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\Samuel\\AppData\\Local\\Temp\\cc6e9XNN.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -3634,7 +3520,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_1be30.exe] ==> ignore
+          arg [cmTC_5ae99.exe] ==> ignore
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o]
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0]
@@ -3645,10 +3531,10 @@ events:
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../..] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../..]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_1be30.dir/objects.a] ==> ignore
+          arg [CMakeFiles\\cmTC_5ae99.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_1be30.dll.a] ==> ignore
+          arg [libcmTC_5ae99.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -3674,7 +3560,7 @@ events:
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
         ignore line: [collect2 version 16.1.0]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Samuel\\AppData\\Local\\Temp\\ccYPBb6z.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_1be30.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_1be30.dir/objects.a --no-whole-archive --out-implib libcmTC_1be30.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Samuel\\AppData\\Local\\Temp\\cc6e9XNN.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_5ae99.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_5ae99.dir/objects.a --no-whole-archive --out-implib libcmTC_5ae99.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
         linker tool for 'CXX': C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe
         remove lib [msvcrt]
         remove lib [msvcrt]

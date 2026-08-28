@@ -1,5 +1,5 @@
 #include "Renders/Raymarching.hpp"
-#include "Scenes/Presets/Primitives/BlinnPhongSphereScene.hpp"
+#include "Scenes/Presets/ThreeSpheresScene.hpp"
 
 #include <algorithm>
 #include <cstdint>
@@ -17,7 +17,7 @@ int main() {
     constexpr int width = 800;
     constexpr int height = 600;
 
-    const ScenePreset& preset = scenes::blinnPhongSphere::preset;
+    const ScenePreset& preset = scenes::threeSpheres::preset;
     const Scene& scene = preset.scene();
     Raymarching raymarching;
 

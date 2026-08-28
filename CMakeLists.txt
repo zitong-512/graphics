@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-file(GLOB_RECURSE SOURCES src/*.cpp)
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 add_executable(raymarched_sphere ${SOURCES})
 set_target_properties(raymarched_sphere PROPERTIES OUTPUT_NAME main)
 target_include_directories(raymarched_sphere PRIVATE src)

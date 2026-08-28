@@ -44,7 +44,7 @@ ScenePreset scenes::blinnPhongPrimitive::makeScene(
     };
 
     const Material planeMaterial{
-        {0.35f, 0.35f, 0.35f},
+        {0.1f, 0.1f, 0.1f}, // Diffuse color
         {0.9f, 0.9f, 0.9f},
         16.0f,
         std::make_shared<CheckerboardTexture>(
@@ -54,7 +54,7 @@ ScenePreset scenes::blinnPhongPrimitive::makeScene(
         )
     };
     ObjectPtr plane = std::make_shared<Plane>(
-        Vec3{0.0f, 0.0f, 0.0f},
+        Vec3{5.0f, 0.0f, 0.0f},
         Vec3{0.0f, 0.0f, 1.0f},
         planeMaterial,
         std::make_shared<BlinnPhongShader>(),

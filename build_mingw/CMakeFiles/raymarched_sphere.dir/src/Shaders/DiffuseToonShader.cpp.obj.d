@@ -1,9 +1,9 @@
 CMakeFiles/raymarched_sphere.dir/src/Shaders/DiffuseToonShader.cpp.obj: \
- C:\Users\Samuel\DOCUME~1\Classes\PROGRA~3\Z\graphics\src\Shaders\DiffuseToonShader.cpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Shaders/DiffuseToonShader.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Shaders/Shader.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Lights/Light.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Vec3.hpp \
+ C:\Users\Samuel\Documents\Classes\Programming\Z\graphics\src\Shaders\DiffuseToonShader.cpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Shaders/DiffuseToonShader.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Shaders/Shader.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Lights/Light.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Vec3.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/cmath \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -134,15 +134,15 @@ CMakeFiles/raymarched_sphere.dir/src/Shaders/DiffuseToonShader.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/backward/auto_ptr.h \
  C:/msys64/ucrt64/include/c++/16.1.0/pstl/glue_memory_defs.h \
  C:/msys64/ucrt64/include/c++/16.1.0/pstl/execution_defs.h \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Materials/Material.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Textures/Texture.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Vec2.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Materials/Material.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Textures/Texture.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Vec2.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/utility \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_relops.h \
  C:/msys64/ucrt64/include/c++/16.1.0/initializer_list \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Camera.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Ray.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Hit.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Camera.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Ray.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Hit.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/vector \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_vector.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_bvector.h \

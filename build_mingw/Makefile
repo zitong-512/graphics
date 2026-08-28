@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Samuel\DOCUME~1\Classes\PROGRA~3\Z\graphics
+CMAKE_SOURCE_DIR = C:\Users\Samuel\Documents\Classes\Programming\Z\graphics
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Samuel\DOCUME~1\Classes\PROGRA~3\Z\graphics\build_mingw
+CMAKE_BINARY_DIR = C:\Users\Samuel\Documents\Classes\Programming\Z\graphics\build_mingw
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Samuel\DOCUME~1\Classes\PROGRA~3\Z\graphics\build_mingw\CMakeFiles C:\Users\Samuel\DOCUME~1\Classes\PROGRA~3\Z\graphics\build_mingw\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Samuel\Documents\Classes\Programming\Z\graphics\build_mingw\CMakeFiles C:\Users\Samuel\Documents\Classes\Programming\Z\graphics\build_mingw\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Samuel\DOCUME~1\Classes\PROGRA~3\Z\graphics\build_mingw\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Samuel\Documents\Classes\Programming\Z\graphics\build_mingw\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -112,6 +112,7 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P C:\Users\Samuel\Documents\Classes\Programming\Z\graphics\build_mingw\CMakeFiles\VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
@@ -536,6 +537,30 @@ src/Renders/Raymarching.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\raymarched_sphere.dir\build.make CMakeFiles/raymarched_sphere.dir/src/Renders/Raymarching.cpp.s
 .PHONY : src/Renders/Raymarching.cpp.s
 
+src/Renders/Renderer.obj: src/Renders/Renderer.cpp.obj
+.PHONY : src/Renders/Renderer.obj
+
+# target to build an object file
+src/Renders/Renderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\raymarched_sphere.dir\build.make CMakeFiles/raymarched_sphere.dir/src/Renders/Renderer.cpp.obj
+.PHONY : src/Renders/Renderer.cpp.obj
+
+src/Renders/Renderer.i: src/Renders/Renderer.cpp.i
+.PHONY : src/Renders/Renderer.i
+
+# target to preprocess a source file
+src/Renders/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\raymarched_sphere.dir\build.make CMakeFiles/raymarched_sphere.dir/src/Renders/Renderer.cpp.i
+.PHONY : src/Renders/Renderer.cpp.i
+
+src/Renders/Renderer.s: src/Renders/Renderer.cpp.s
+.PHONY : src/Renders/Renderer.s
+
+# target to generate assembly for a file
+src/Renders/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\raymarched_sphere.dir\build.make CMakeFiles/raymarched_sphere.dir/src/Renders/Renderer.cpp.s
+.PHONY : src/Renders/Renderer.cpp.s
+
 src/Scenes/Presets/BlinnPhongPlaneScene.obj: src/Scenes/Presets/BlinnPhongPlaneScene.cpp.obj
 .PHONY : src/Scenes/Presets/BlinnPhongPlaneScene.obj
 
@@ -823,6 +848,30 @@ src/Scenes/Presets/Primitives/BlinnPhongTetrahedronScene.s: src/Scenes/Presets/P
 src/Scenes/Presets/Primitives/BlinnPhongTetrahedronScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\raymarched_sphere.dir\build.make CMakeFiles/raymarched_sphere.dir/src/Scenes/Presets/Primitives/BlinnPhongTetrahedronScene.cpp.s
 .PHONY : src/Scenes/Presets/Primitives/BlinnPhongTetrahedronScene.cpp.s
+
+src/Scenes/Presets/ThreeSpheresScene.obj: src/Scenes/Presets/ThreeSpheresScene.cpp.obj
+.PHONY : src/Scenes/Presets/ThreeSpheresScene.obj
+
+# target to build an object file
+src/Scenes/Presets/ThreeSpheresScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\raymarched_sphere.dir\build.make CMakeFiles/raymarched_sphere.dir/src/Scenes/Presets/ThreeSpheresScene.cpp.obj
+.PHONY : src/Scenes/Presets/ThreeSpheresScene.cpp.obj
+
+src/Scenes/Presets/ThreeSpheresScene.i: src/Scenes/Presets/ThreeSpheresScene.cpp.i
+.PHONY : src/Scenes/Presets/ThreeSpheresScene.i
+
+# target to preprocess a source file
+src/Scenes/Presets/ThreeSpheresScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\raymarched_sphere.dir\build.make CMakeFiles/raymarched_sphere.dir/src/Scenes/Presets/ThreeSpheresScene.cpp.i
+.PHONY : src/Scenes/Presets/ThreeSpheresScene.cpp.i
+
+src/Scenes/Presets/ThreeSpheresScene.s: src/Scenes/Presets/ThreeSpheresScene.cpp.s
+.PHONY : src/Scenes/Presets/ThreeSpheresScene.s
+
+# target to generate assembly for a file
+src/Scenes/Presets/ThreeSpheresScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\raymarched_sphere.dir\build.make CMakeFiles/raymarched_sphere.dir/src/Scenes/Presets/ThreeSpheresScene.cpp.s
+.PHONY : src/Scenes/Presets/ThreeSpheresScene.cpp.s
 
 src/Scenes/Presets/ToonPhongSphereComparisonScene.obj: src/Scenes/Presets/ToonPhongSphereComparisonScene.cpp.obj
 .PHONY : src/Scenes/Presets/ToonPhongSphereComparisonScene.obj
@@ -1268,6 +1317,9 @@ help:
 	@echo ... src/Renders/Raymarching.obj
 	@echo ... src/Renders/Raymarching.i
 	@echo ... src/Renders/Raymarching.s
+	@echo ... src/Renders/Renderer.obj
+	@echo ... src/Renders/Renderer.i
+	@echo ... src/Renders/Renderer.s
 	@echo ... src/Scenes/Presets/BlinnPhongPlaneScene.obj
 	@echo ... src/Scenes/Presets/BlinnPhongPlaneScene.i
 	@echo ... src/Scenes/Presets/BlinnPhongPlaneScene.s
@@ -1304,6 +1356,9 @@ help:
 	@echo ... src/Scenes/Presets/Primitives/BlinnPhongTetrahedronScene.obj
 	@echo ... src/Scenes/Presets/Primitives/BlinnPhongTetrahedronScene.i
 	@echo ... src/Scenes/Presets/Primitives/BlinnPhongTetrahedronScene.s
+	@echo ... src/Scenes/Presets/ThreeSpheresScene.obj
+	@echo ... src/Scenes/Presets/ThreeSpheresScene.i
+	@echo ... src/Scenes/Presets/ThreeSpheresScene.s
 	@echo ... src/Scenes/Presets/ToonPhongSphereComparisonScene.obj
 	@echo ... src/Scenes/Presets/ToonPhongSphereComparisonScene.i
 	@echo ... src/Scenes/Presets/ToonPhongSphereComparisonScene.s
@@ -1363,6 +1418,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P C:\Users\Samuel\Documents\Classes\Programming\Z\graphics\build_mingw\CMakeFiles\VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

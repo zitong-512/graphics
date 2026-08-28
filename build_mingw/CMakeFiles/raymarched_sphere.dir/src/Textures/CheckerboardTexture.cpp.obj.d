@@ -1,9 +1,9 @@
 CMakeFiles/raymarched_sphere.dir/src/Textures/CheckerboardTexture.cpp.obj: \
- C:\Users\Samuel\DOCUME~1\Classes\PROGRA~3\Z\graphics\src\Textures\CheckerboardTexture.cpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Textures/CheckerboardTexture.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Textures/Texture.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Vec2.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Vec3.hpp \
+ C:\Users\Samuel\Documents\Classes\Programming\Z\graphics\src\Textures\CheckerboardTexture.cpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Textures/CheckerboardTexture.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Textures/Texture.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Vec2.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Vec3.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/cmath \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \

@@ -1,11 +1,11 @@
 CMakeFiles/raymarched_sphere.dir/src/Objects/Tetrahedron.cpp.obj: \
- C:\Users\Samuel\DOCUME~1\Classes\PROGRA~3\Z\graphics\src\Objects\Tetrahedron.cpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Objects/Tetrahedron.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Objects/Object.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Materials/Material.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Textures/Texture.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Vec2.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Vec3.hpp \
+ C:\Users\Samuel\Documents\Classes\Programming\Z\graphics\src\Objects\Tetrahedron.cpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Objects/Tetrahedron.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Objects/Object.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Materials/Material.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Textures/Texture.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Vec2.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Vec3.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/cmath \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -139,11 +139,11 @@ CMakeFiles/raymarched_sphere.dir/src/Objects/Tetrahedron.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/utility \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_relops.h \
  C:/msys64/ucrt64/include/c++/16.1.0/initializer_list \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Shaders/Shader.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Lights/Light.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Camera.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Ray.hpp \
- C:/Users/Samuel/DOCUME~1/Classes/PROGRA~3/Z/graphics/src/Utilities/Hit.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Shaders/Shader.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Lights/Light.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Camera.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Ray.hpp \
+ C:/Users/Samuel/Documents/Classes/Programming/Z/graphics/src/Utilities/Hit.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/vector \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_vector.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_bvector.h \
@@ -152,4 +152,11 @@ CMakeFiles/raymarched_sphere.dir/src/Objects/Tetrahedron.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/vector.tcc \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/memory_resource.h \
  C:/msys64/ucrt64/include/c++/16.1.0/cstddef \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/uses_allocator_args.h
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/uses_allocator_args.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/algorithm \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_algo.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/algorithmfwd.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_heap.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/uniform_int_dist.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/cstdlib \
+ C:/msys64/ucrt64/include/c++/16.1.0/pstl/glue_algorithm_defs.h
