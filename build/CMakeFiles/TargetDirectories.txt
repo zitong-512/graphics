@@ -1,0 +1,3 @@
+/Users/zitong2/Desktop//Coding/graphics/build/CMakeFiles/raymarched_sphere.dir
+/Users/zitong2/Desktop//Coding/graphics/build/CMakeFiles/edit_cache.dir
+/Users/zitong2/Desktop//Coding/graphics/build/CMakeFiles/rebuild_cache.dir

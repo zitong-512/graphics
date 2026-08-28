@@ -15,7 +15,7 @@ public:
 
     Vec3 shade(const Hit& hit) const override;
         
-
+ 
 private:
     Vec3 objectColor_; 
     Vec3 ambientLight_;

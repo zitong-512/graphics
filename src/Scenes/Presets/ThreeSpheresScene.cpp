@@ -50,13 +50,13 @@ ScenePreset scenes::threeSpheres::makeScene() {
         Vec3{-1.05f, 0.0f, 1.0f},
         sphereRadius,
         sphereMaterial,
-        std::make_shared<ToonShader>()
+        std::make_shared<BlinnPhongShader>()
     );
     ObjectPtr ambientSphere = std::make_shared<Sphere>(
         Vec3{0.0f, 0.0f, 1.0f},
         sphereRadius,
         reflectiveSphereMaterial,
-        std::make_shared<AmbientShader>()
+        std::make_shared<BlinnPhongShader>()
     );
     ObjectPtr blinnPhongSphere = std::make_shared<Sphere>(
         Vec3{1.05f, 0.0f, 1.0f},

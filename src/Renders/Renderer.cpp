@@ -18,8 +18,8 @@ float Renderer::shadow(const Scene& scene, const Hit& hit, const PointLight& lig
     
     // Account for the shadow bias!
     const Ray exitRay{
-        {0.0f, 0.0f, 0.0f},
-        {0.0f, 0.0f, 0.0f}
+        entryHit->point - 0.001f * entryHit->normal,
+        light.position() - entryHit->point
     };
     const std::optional<float> exit = exitDistance(
         *entryHit->object, exitRay, lightDistance - entryHit->t
@@ -27,7 +27,7 @@ float Renderer::shadow(const Scene& scene, const Hit& hit, const PointLight& lig
     if (!exit) { return 0.0f; }
 
     // Use the std::exp function!
-    return 0.0f;
+    return std::exp(10 * -*exit);
 }
 
 Vec3 Renderer::color(const Scene& scene, const Ray& ray) const {
@@ -74,15 +74,20 @@ std::vector<LightPtr> Renderer::visibleLights(const Scene& scene,
 
 Ray Renderer::reflectedRay(const Ray& incomingRay, const Hit& hit) const {
     // Important to use an offset (:
-    //const Vec3 offsetNormal = dot(reflected, normal) >= 0.0f ? normal : -normal;
-
-    return { {0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f} };
+    Vec3 l = normalize(incomingRay.direction - hit.point);
+    Vec3 n = normalize(hit.normal);
+    Vec3 r = normalize(l - ((2 * dot(l, n)) * n));
+    const Vec3 offsetNormal = dot(r, n) >= 0.0f ? n : -n;
+    return {hit.point + offsetNormal, r};
 }
 
 Vec3 Renderer::reflectionColor(const Scene& scene, const Ray& incomingRay, const Hit& hit) const {
     const std::optional<Hit> reflectedHit = closestHit(
         scene, reflectedRay(incomingRay, hit), maxDistance_
     );
-    if (true) { return scene.background(); }
-    else { return {0.0f, 0.0f, 0.0f}; }
+
+    if (reflectedHit){
+    Vec3 color = localColor(scene, *reflectedHit);
+        return color;
+    } else { return scene.background(); }
 }
