@@ -20,6 +20,11 @@ Vec3 Object::normal(const Vec3& point) const {
     return normalize(gradient);
 }
 
+std::optional<Hit> Object::hit(const Ray&, float, float) const {
+    return std::nullopt;
+}
+
 Vec2 Object::textureCoordinates(const Vec3& point) const {
     return {point.x, point.y};
 }
+

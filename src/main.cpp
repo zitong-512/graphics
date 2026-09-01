@@ -1,4 +1,5 @@
 #include "Renders/Raymarching.hpp"
+#include "Renders/RayTracing.hpp"
 #include "Scenes/Presets/ThreeSpheresScene.hpp"
 
 #include <algorithm>
@@ -12,10 +13,19 @@ namespace {
         return static_cast<std::uint8_t>(255.999f * std::clamp(value, 0.0f, 1.0f));
     }
 
-    Vec3 colorForPixel(int x, int y, int width, int height, Scene scene, Raymarching raymarching){
-        Ray ray = scene.camera().rayForPixel(static_cast<float>(x), static_cast<float>(y), width, height);
-        Vec3 color = raymarching.color(scene, ray);
-        return color;
+    Vec3 colorForPixel(int x, int y, int width, int height, Scene scene, RayTracing renderer){
+        Vec3 color;
+        int sample = 4;
+        for(int i = 0; i <= sample; i++){
+            for(int j = 0; j <= sample; j++){
+                Ray ray = scene.camera().rayForPixel(
+                    static_cast<float>(x) + static_cast<float>(i) / static_cast<float>(sample), 
+                    static_cast<float>(y) + static_cast<float>(j) / static_cast<float>(sample), 
+                    width, height);
+                color = color + renderer.color(scene, ray);
+            }
+        }
+        return color / (static_cast<float>(sample) * static_cast<float>(sample));
     }
 }
 
@@ -25,14 +35,14 @@ int main() {
 
     const ScenePreset& preset = scenes::threeSpheres::preset;
     const Scene& scene = preset.scene();
-    Raymarching raymarching;
+    RayTracing renderer;
 
     std::vector<std::uint8_t> pixels;
     pixels.reserve(static_cast<std::size_t>(width) * height * 3);
 
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
-            const Vec3 color = colorForPixel(x, y, width, height, scene, raymarching);
+            const Vec3 color = colorForPixel(x, y, width, height, scene, renderer);
 
             pixels.push_back(toByte(color.x));
             pixels.push_back(toByte(color.y));
