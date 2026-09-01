@@ -35,7 +35,7 @@ ScenePreset scenes::toonPhongSpherePlane::makeScene() {
         {1.0f, 1.0f, 1.0f},
         32.0f
     };
-    auto toonShader = std::make_shared<ToonShader>(2);
+    auto toonShader = std::make_shared<ToonShader>({0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f});
     ObjectPtr toonSphere = std::make_shared<Sphere>(
         Vec3{-1.05f, 0.0f, -3.0f},
         1.0f,

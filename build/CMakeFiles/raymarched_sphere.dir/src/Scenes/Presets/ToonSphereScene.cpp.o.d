@@ -845,5 +845,4 @@ CMakeFiles/raymarched_sphere.dir/src/Scenes/Presets/ToonSphereScene.cpp.o: \
   /Users/zitong2/Desktop//Coding/graphics/src/Lights/AmbientLight.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Lights/PointLight.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Objects/Sphere.hpp \
-  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/ToonShader.hpp \
-  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/BlinnPhongShader.hpp
+  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/ToonShader.hpp

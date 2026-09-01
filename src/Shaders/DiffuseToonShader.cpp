@@ -19,5 +19,3 @@ Vec3 DiffuseToonShader::shade(const Hit& hit) const {
         (cos) * objectColor_.z * ambientLight_.z
     };
 }
-
-

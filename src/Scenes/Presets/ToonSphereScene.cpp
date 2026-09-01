@@ -33,7 +33,7 @@ ScenePreset scenes::toonSphere::makeScene() {
         {1.0f, 1.0f, 1.0f},
         32.0f
     };
-    auto shader = std::make_shared<ToonShader>(3);
+    auto shader = std::make_shared<ToonShader>({0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f});
 
     ObjectPtr sphere = std::make_shared<Sphere>(
         Vec3{0.0f, 0.0f, -3.0f}, // Position

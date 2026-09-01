@@ -27683,7 +27683,6 @@ CMakeFiles/raymarched_sphere.dir/src/Scenes/Presets/ToonSphereScene.cpp.o: /User
   /Users/zitong2/Desktop//Coding/graphics/src/Scenes/Presets/ToonSphereScene.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Scenes/Scene.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Scenes/ScenePreset.hpp \
-  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/BlinnPhongShader.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Shaders/Shader.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Shaders/ToonShader.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Textures/Texture.hpp \
@@ -34737,8 +34736,10 @@ CMakeFiles/raymarched_sphere.dir/src/Shaders/ToonShader.cpp.o: /Users/zitong2/De
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdint.h \
   /Users/zitong2/Desktop//Coding/graphics/src/Lights/Light.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Materials/Material.hpp \
-  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/BlinnPhongShader.hpp \
+  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/AmbientShader.hpp \
+  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/DiffuseToonShader.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Shaders/Shader.hpp \
+  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/SpecularToonShader.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Shaders/ToonShader.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Textures/Texture.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Utilities/Camera.hpp \

@@ -1,16 +1,16 @@
 #pragma once
 
-#include "Shaders/BlinnPhongShader.hpp"
+#include "Shaders/Shader.hpp"
 
-class ToonShader : public BlinnPhongShader {
+class ToonShader : public Shader {
 public:
-    explicit ToonShader(int levels = 3) : levels_(levels) {}
+    ToonShader(Vec3 objectColor = {0.85f, 0.4f, 0.15f},
+                  Vec3 ambientLight = {0.35f, 0.35f, 0.35f})
+        : objectColor_(objectColor), ambientLight_(ambientLight) {}
 
-    Vec3 shade(const Hit& hit,
-               const Material& material,
-               const Camera& camera,
-               const std::vector<LightPtr>& lights) const override;
+    Vec3 shade(const Hit& hit) const override;
 
 private:
-    int levels_;
+    Vec3 objectColor_;
+    Vec3 ambientLight_;
 };

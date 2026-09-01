@@ -1,7 +1,6 @@
 CMakeFiles/raymarched_sphere.dir/src/Shaders/ToonShader.cpp.o: \
   /Users/zitong2/Desktop//Coding/graphics/src/Shaders/ToonShader.cpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Shaders/ToonShader.hpp \
-  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/BlinnPhongShader.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Shaders/Shader.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Lights/Light.hpp \
   /Users/zitong2/Desktop//Coding/graphics/src/Utilities/Vec3.hpp \
@@ -781,4 +780,7 @@ CMakeFiles/raymarched_sphere.dir/src/Shaders/ToonShader.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale_dir/time.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale_dir/wbuffer_convert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale_dir/wstring_convert.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdarg
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdarg \
+  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/AmbientShader.hpp \
+  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/DiffuseToonShader.hpp \
+  /Users/zitong2/Desktop//Coding/graphics/src/Shaders/SpecularToonShader.hpp
