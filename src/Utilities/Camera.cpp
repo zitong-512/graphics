@@ -9,7 +9,7 @@ Camera::Camera(Vec3 position, Vec3 target, Vec3 up,
       viewportWidth_(viewportWidth),
       viewportHeight_(viewportHeight) {}
 
-Ray Camera::rayForPixel(int x, int y, int imageWidth, int imageHeight) const {
+Ray Camera::rayForPixel(float x, float y, int imageWidth, int imageHeight) const {
     const float halfWidth = viewportWidth_ * 0.5f;
     const float halfHeight = viewportHeight_ * 0.5f;
     const float u = 2.0f * (static_cast<float>(x) + 0.5f) / imageWidth - 1.0f;

@@ -11,6 +11,12 @@ namespace {
     std::uint8_t toByte(float value) {
         return static_cast<std::uint8_t>(255.999f * std::clamp(value, 0.0f, 1.0f));
     }
+
+    Vec3 colorForPixel(int x, int y, int width, int height, Scene scene, Raymarching raymarching){
+        Ray ray = scene.camera().rayForPixel(static_cast<float>(x), static_cast<float>(y), width, height);
+        Vec3 color = raymarching.color(scene, ray);
+        return color;
+    }
 }
 
 int main() {
@@ -26,8 +32,7 @@ int main() {
 
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
-            Ray ray = scene.camera().rayForPixel(x, y, width, height);
-            const Vec3 color = raymarching.color(scene, ray);
+            const Vec3 color = colorForPixel(x, y, width, height, scene, raymarching);
 
             pixels.push_back(toByte(color.x));
             pixels.push_back(toByte(color.y));

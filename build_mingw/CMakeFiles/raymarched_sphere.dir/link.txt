@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\raymarched_sphere.dir/objects.a
-C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\raymarched_sphere.dir/objects.a @CMakeFiles\raymarched_sphere.dir\objects1.rsp
-C:\msys64\ucrt64\bin\c++.exe -Wl,--whole-archive CMakeFiles\raymarched_sphere.dir/objects.a -Wl,--no-whole-archive -o main.exe -Wl,--out-implib,libmain.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\raymarched_sphere.dir\linkLibs.rsp

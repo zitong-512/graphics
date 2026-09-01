@@ -11,15 +11,13 @@ float Renderer::shadow(const Scene& scene, const Hit& hit, const PointLight& lig
     if (lightDistance <= shadowBias_) {return 1.0f;}
 
     const Ray shadowRay{hit.point + hit.normal * shadowBias_, toLight / lightDistance};
-    constexpr float shadowDensity = 1.0f;
-
     const std::optional<Hit> entryHit = closestHit(scene, shadowRay, lightDistance);
     if (!entryHit || entryHit->object == nullptr) { return 1.0f; }
     
     // Account for the shadow bias!
     const Ray exitRay{
         entryHit->point - 0.001f * entryHit->normal,
-        light.position() - entryHit->point
+        normalize(light.position() - entryHit->point)
     };
     const std::optional<float> exit = exitDistance(
         *entryHit->object, exitRay, lightDistance - entryHit->t
@@ -74,11 +72,11 @@ std::vector<LightPtr> Renderer::visibleLights(const Scene& scene,
 
 Ray Renderer::reflectedRay(const Ray& incomingRay, const Hit& hit) const {
     // Important to use an offset (:
-    Vec3 l = normalize(incomingRay.direction - hit.point);
+    Vec3 l = normalize(incomingRay.direction);
     Vec3 n = normalize(hit.normal);
     Vec3 r = normalize(l - ((2 * dot(l, n)) * n));
     const Vec3 offsetNormal = dot(r, n) >= 0.0f ? n : -n;
-    return {hit.point + offsetNormal, r};
+    return {hit.point + shadowBias_ *offsetNormal, r};
 }
 
 Vec3 Renderer::reflectionColor(const Scene& scene, const Ray& incomingRay, const Hit& hit) const {

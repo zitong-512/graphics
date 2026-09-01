@@ -13,7 +13,7 @@ viewport placed one unit in front of the camera.
 ```powershell
 cmake -S . -B build
 cmake --build build
-.\build\Debug\raymarched_sphere.exe
+.\build\Debug\main.exe
 ```
 
 For a single-config generator, the executable may instead be directly under

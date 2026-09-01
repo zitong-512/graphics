@@ -1,0 +1,10 @@
+# CMake build trees are machine-specific and must not be versioned.
+/build/
+/build_mingw/
+
+# Generated binaries and platform metadata.
+/main
+/main.exe
+/raymarched_sphere
+.DS_Store
+.~lock.*#
