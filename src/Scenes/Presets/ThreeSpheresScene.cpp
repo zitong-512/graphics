@@ -43,7 +43,9 @@ ScenePreset scenes::threeSpheres::makeScene() {
         32.0f
     };
     Material reflectiveSphereMaterial = sphereMaterial;
-    reflectiveSphereMaterial.reflectiveness = 1.0f;
+    reflectiveSphereMaterial.reflectiveness = 0.5f;
+    reflectiveSphereMaterial.transmissivity = 0.0f;
+    reflectiveSphereMaterial.refractiveIndex = 1.5f;
     constexpr float sphereRadius = 0.5f;
 
     ObjectPtr toonSphere = std::make_shared<Sphere>(

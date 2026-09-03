@@ -33,10 +33,17 @@ Vec3 Renderer::color(const Scene& scene, const Ray& ray) const {
     if (!hit || hit->object == nullptr) { return scene.background(); }
 
     const Vec3 surfaceColor = localColor(scene, *hit);
-    const float reflectiveness = hit->object->material().reflectiveness;
+    const Material& material = hit->object->material();
+    const float reflectiveness = material.reflectiveness;
+    const float transmissivity = material.transmissivity;
+    const float surfaceWeight = std::max(
+        0.0f,
+        1.0f - reflectiveness - transmissivity
+    );
 
-    return (1.0f - reflectiveness) * surfaceColor
-         + reflectiveness * reflectionColor(scene, ray, *hit);
+    return surfaceWeight * surfaceColor
+         + reflectiveness * reflectionColor(scene, ray, *hit)
+         + transmissivity * refractedColor(scene, ray, *hit);
 }
 
 Vec3 Renderer::localColor(const Scene& scene, const Hit& hit) const {
@@ -88,4 +95,17 @@ Vec3 Renderer::reflectionColor(const Scene& scene, const Ray& incomingRay, const
     Vec3 color = localColor(scene, *reflectedHit);
         return color;
     } else { return scene.background(); }
+}
+
+/* Refractions */
+
+std::optional<Ray> Renderer::refractedRay(const Ray& incomingRay,
+                                          const Hit& hit) const {
+    return std::nullopt;
+}
+
+Vec3 Renderer::refractedColor(const Scene& scene,
+                              const Ray& incomingRay,
+                              const Hit& hit) const {
+    return {0.0f, 0.0f, 0.0f};
 }

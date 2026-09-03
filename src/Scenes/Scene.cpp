@@ -6,11 +6,13 @@
 Scene::Scene(Camera camera,
              Vec3 background,
              std::vector<LightPtr> lights,
-             std::vector<ObjectPtr> objects)
+             std::vector<ObjectPtr> objects,
+             int sample)
     : camera_(std::move(camera)),
       background_(background),
       lights_(std::move(lights)),
-      objects_(std::move(objects)) {}
+      objects_(std::move(objects)),
+      sample_(sample) {}
 
 std::pair<float, const Object*> Scene::sdf(const Vec3& point) const {
     float closestDistance = std::numeric_limits<float>::infinity();

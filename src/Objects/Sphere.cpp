@@ -17,13 +17,11 @@ std::optional<Hit> Sphere::hit(const Ray& ray,
     float c = dot(ray.origin - center_, ray.origin - center_) - radius_ * radius_; 
 
     float d = std::sqrt(b*b - 4*a*c);
+    float t = std::min(-b + d, -b - d) / (2 * a);
 
-    if (d >= 0){
-        float t1 = (-b + d) / (2 * a);
-        float t2 = (-b - d) / (2 * a);
-
+    if (d >= 0) {
         Hit hit;
-        hit.t = std::min(t1, t2);
+        hit.t = t;
         hit.point = ray.origin + hit.t * ray.direction;
         hit.normal = Sphere::normal(hit.point);
         hit.uv = {0.0f, 0.0f};

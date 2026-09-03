@@ -23,6 +23,18 @@ float Plane::sdf(const Vec3& point) const {
     return dot(point - point_, normal_); // Assuming normal_ is normalized
 }
 
+std::optional<Hit> Plane::hit(const Ray& ray, float intersectionEpsilon, float maxDistance) const {
+    
+    const float t = 0;
+    if (t < intersectionEpsilon || t > maxDistance) { 
+        return std::nullopt; 
+    }
+    else {
+        Hit hit;
+        return hit;
+    }
+}
+
 Vec3 Plane::normal(const Vec3&) const {
     return normal_;
 }

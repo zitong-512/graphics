@@ -12,7 +12,8 @@ public:
     Scene(Camera camera,
           Vec3 background,
           std::vector<LightPtr> lights,
-          std::vector<ObjectPtr> objects);
+          std::vector<ObjectPtr> objects, 
+          int sample = 2);
 
     std::pair<float, const Object*> sdf(const Vec3& point) const;
 
@@ -20,10 +21,12 @@ public:
     const Camera& camera() const { return camera_; }
     const std::vector<LightPtr>& lights() const { return lights_; }
     const std::vector<ObjectPtr>& objects() const { return objects_; }
+    const int sample() const { return sample_; }
 
 private:
     Camera camera_;
     Vec3 background_;
     std::vector<LightPtr> lights_;
     std::vector<ObjectPtr> objects_;
+    int sample_;
 };

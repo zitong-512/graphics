@@ -15,7 +15,7 @@ namespace {
 
     Vec3 colorForPixel(int x, int y, int width, int height, Scene scene, RayTracing renderer){
         Vec3 color;
-        int sample = 4;
+        int sample = scene.sample();
         for(int i = 0; i <= sample; i++){
             for(int j = 0; j <= sample; j++){
                 Ray ray = scene.camera().rayForPixel(

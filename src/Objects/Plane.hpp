@@ -16,6 +16,9 @@ public:
           std::optional<Vec3> textureV = std::nullopt);
 
     float sdf(const Vec3& point) const override;
+    std::optional<Hit> hit(const Ray& ray,
+                           float intersectionEpsilon,
+                           float maxDistance) const override;
     Vec3 normal(const Vec3& point) const override;
     Vec2 textureCoordinates(const Vec3& point) const override;
 
