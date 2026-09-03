@@ -17,7 +17,8 @@ struct Vec2 {
     }
 };
 
-float dot(const Vec2& a , const Vec2& b){
+
+inline float dot(const Vec2& a , const Vec2& b){
     return a.x * b.x + a.y * b.y;
 
 }
