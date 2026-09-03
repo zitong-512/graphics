@@ -19,7 +19,7 @@ std::optional<Hit> Sphere::hit(const Ray& ray,
     float d = std::sqrt(b*b - 4*a*c);
     float t = std::min(-b + d, -b - d) / (2 * a);
 
-    if (d >= 0) {
+    if (d >= 0 && t < maxDistance && t > intersectionEpsilon) {
         Hit hit;
         hit.t = t;
         hit.point = ray.origin + hit.t * ray.direction;

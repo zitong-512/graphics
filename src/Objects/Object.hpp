@@ -4,7 +4,6 @@
 #include "Shaders/Shader.hpp"
 #include "Utilities/Hit.hpp"
 #include "Utilities/Ray.hpp"
-#include "Utilities/Vec2.hpp"
 #include "Utilities/Vec3.hpp"
 
 #include <memory>

@@ -10,9 +10,9 @@ namespace {
 Vec3 multiply(const Vec3& left, const Vec3& right) {
     return {left.x * right.x, left.y * right.y, left.z * right.z};
 }
-}
+} 
 
-Vec3 BlinnPhongShader::shade(
+Vec3 BlinnPhongShader::shade( 
     const Hit& hit,
     const Material& material,
     const Camera& camera,

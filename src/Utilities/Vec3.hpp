@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cmath>
+#include "Utilities/Vec2.hpp"
 
 struct Vec3 {
     float x = 0.0f;
@@ -26,6 +27,8 @@ struct Vec3 {
     }
 };
 
+
+
 inline constexpr Vec3 operator*(float scalar, const Vec3& vector) {
     return vector * scalar;
 }
@@ -48,4 +51,8 @@ inline float length(const Vec3& vector) {
 
 inline Vec3 normalize(const Vec3& vector) {
     return vector / length(vector);
+}
+
+inline Vec2 planar(const Vec3& vector) {
+    return {vector.x, vector.y};
 }

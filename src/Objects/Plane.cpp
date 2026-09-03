@@ -25,12 +25,19 @@ float Plane::sdf(const Vec3& point) const {
 
 std::optional<Hit> Plane::hit(const Ray& ray, float intersectionEpsilon, float maxDistance) const {
     
-    const float t = 0;
+    const float t = dot(point_ - ray.origin, normal_) / dot(ray.direction, normal_);
+
+
     if (t < intersectionEpsilon || t > maxDistance) { 
         return std::nullopt; 
     }
     else {
         Hit hit;
+        hit.t = t;
+        hit.point = ray.origin + hit.t * ray.direction;
+        hit.normal = normal_;
+        hit.uv = textureCoordinates(hit.point);
+        hit.object = this;      
         return hit;
     }
 }
