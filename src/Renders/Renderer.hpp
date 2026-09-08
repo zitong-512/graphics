@@ -40,11 +40,13 @@ private:
                          const Ray& incomingRay,
                          const Hit& hit) const;
     Ray reflectedRay(const Ray& incomingRay, const Hit& hit) const;
-    Vec3 refractedColor(const Scene& scene,
-                        const Ray& incomingRay,
-                        const Hit& hit) const;
+    Vec3 refractionColor(const Scene& scene,
+                         const Ray& incomingRay,
+                         const Hit& hit) const;
     std::optional<Ray> refractedRay(const Ray& incomingRay,
-                                    const Hit& hit) const;
+                                    const Hit& hit,
+                                    float sourceRefractiveIndex,
+                                    float destinationRefractiveIndex) const;
 
     float maxDistance_;
     float shadowBias_;

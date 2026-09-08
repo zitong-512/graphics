@@ -1,5 +1,14 @@
 #include "Objects/Cylinder.hpp"
 
+// Cylinder TODOs, roughly in order:
+// 1. Give sdf() a real cylinder distance.
+// 2. Bail out when the ray is parallel to the cylinder.
+// 3. Check the discriminant before taking its square root.
+// 4. Calculate both quadratic roots correctly.
+// 5. Pick the nearest root that is actually in front of the ray.
+// 6. Normalize the hit normal.
+// 7. Give the cylinder useful UV coordinates.
+
 float Cylinder::sdf(const Vec3&) const {
     return 0.0f;
 }
