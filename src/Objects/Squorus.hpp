@@ -15,7 +15,6 @@ public:
           center_(center),
           bigR_(bigR),
           smallR_(smallR) {}
-
     float sdf(const Vec3& point) const override;
 
 private:

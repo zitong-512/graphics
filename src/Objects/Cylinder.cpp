@@ -24,7 +24,7 @@ std::optional<Hit> Cylinder::hit(const Ray& ray, float intersectionEpsilon, floa
     
     float discriminant = b * b - 4 * a * c;
 
-    if (discriminant < 0.0f){return std::nullopt;}
+    //if (discriminant < 0.0f){return std::nullopt;}
 
     float s = std::sqrt(discriminant);
     float t = std::min(-b + s, -b - s)/ (2 * a);
@@ -34,7 +34,10 @@ std::optional<Hit> Cylinder::hit(const Ray& ray, float intersectionEpsilon, floa
     }
 
     const float l = dot(Vec3({0.0f, 0.0f, height_}) - ray.origin, Vec3({0.0f, 0.0f, 1.0f})) / dot(ray.direction, Vec3({0.0f, 0.0f, 1.0f}));
-    if (length(ray.at(l) - Vec3({0.0f, 0.0f, height_})) < radius_){
+    if (ray.at(t).z <= height_ && ray.at(t).z >= 0.0f){
+        t = l;
+    }
+    if (length(ray.at(l) - Vec3({center_.x, center_.y, height_})) < radius_){
         if (std::min(t, l) > 0){t = std::min(t, l);}
         else{t = std::max(t, l);}
     }
@@ -43,8 +46,13 @@ std::optional<Hit> Cylinder::hit(const Ray& ray, float intersectionEpsilon, floa
         Hit hit;
         hit.t = t;
         hit.point = ray.at(t); 
-        Vec2 normal = planar(hit.point) - planar(center_);
-        hit.normal = normalize({normal.x, normal.y, 0.0f});
+        if (t == l){
+            hit.normal = Vec3({0.0f, 0.0f, height_});
+        }
+        else{
+            Vec2 normal = planar(hit.point) - planar(center_);
+            hit.normal = normalize({normal.x, normal.y, 0.0f});
+        }
         hit.uv = {0.0f, 0.0f};
         hit.object = this;
 

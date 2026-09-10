@@ -7,10 +7,10 @@
 class Cone final : public Object {
 public:
     Cone(Vec3 center,
-         float radius,
-         float height,
-         Material material,
-         std::shared_ptr<const Shader> shader)
+        float radius,
+        float height,
+        Material material,
+        std::shared_ptr<const Shader> shader)
         : Object(std::move(material), std::move(shader)),
           center_(center),
           radius_(radius),

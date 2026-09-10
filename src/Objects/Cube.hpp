@@ -15,6 +15,7 @@ public:
           radius_(radius) {}
 
     float sdf(const Vec3& point) const override;
+    std::optional<Hit> hit(const Ray& ray, float intersectionEpsilon, float maxDistance) const override;
 
 private:
     Vec3 center_;

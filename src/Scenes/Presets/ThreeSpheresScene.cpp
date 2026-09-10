@@ -6,6 +6,7 @@
 #include "Objects/Plane.hpp"
 #include "Objects/Sphere.hpp"
 #include "Objects/Cylinder.hpp"
+#include "Objects/Cube.hpp"
 #include "Shaders/AmbientShader.hpp"
 #include "Shaders/BlinnPhongShader.hpp"
 #include "Shaders/ToonShader.hpp"
@@ -49,7 +50,7 @@ ScenePreset scenes::threeSpheres::makeScene() {
     reflectiveSphereMaterial.refractiveIndex = 1.5f;
     constexpr float sphereRadius = 0.5f;
 
-    ObjectPtr toonSphere = std::make_shared<Sphere>(
+    ObjectPtr toonSphere = std::make_shared<Cube>(
         Vec3{-1.05f, 0.0f, 1.0f},
         sphereRadius,
         reflectiveSphereMaterial,
