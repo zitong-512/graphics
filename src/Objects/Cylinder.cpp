@@ -21,27 +21,36 @@ std::optional<Hit> Cylinder::hit(const Ray& ray, float intersectionEpsilon, floa
     float a = dot(d, d);
     float b = 2 * dot(d, (e - f));
     float c = dot((e - f), (e - f)) - radius_ * radius_;
+    
+    float discriminant = b * b - 4 * a * c;
 
-    float s = std::sqrt(b * b - 4 * a * c);
-    float t = std::min(-b + s, - - s) / (2 * a);
+    if (discriminant < 0.0f){return std::nullopt;}
 
+    float s = std::sqrt(discriminant);
+    float t = std::min(-b + s, -b - s)/ (2 * a);
 
+    if (t < 0.0f){
+        float t = std::max(-b + s, -b - s)/ (2 * a);
+    }
 
-    if (s >= 0 && t < maxDistance && t > intersectionEpsilon) {
+    const float l = dot(Vec3({0.0f, 0.0f, height_}) - ray.origin, Vec3({0.0f, 0.0f, 1.0f})) / dot(ray.direction, Vec3({0.0f, 0.0f, 1.0f}));
+    if (length(ray.at(l) - Vec3({0.0f, 0.0f, height_})) < radius_){
+        if (std::min(t, l) > 0){t = std::min(t, l);}
+        else{t = std::max(t, l);}
+    }
+
+    if (t > 0.0f && t < maxDistance && t > intersectionEpsilon && ray.at(t).z <= height_ && ray.at(t).z >= 0.0f) {
         Hit hit;
         hit.t = t;
-        hit.point = ray.at(t);
+        hit.point = ray.at(t); 
         Vec2 normal = planar(hit.point) - planar(center_);
-        hit.normal = {normal.x, normal.y, 0.0f};
+        hit.normal = normalize({normal.x, normal.y, 0.0f});
         hit.uv = {0.0f, 0.0f};
         hit.object = this;
 
         return hit;
     }
-    else {
-        return std::nullopt;
-    }
-
+    return std::nullopt;
 }
 
 

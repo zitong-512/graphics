@@ -1,14 +1,19 @@
-#include "Objects/Sphere.hpp"
+#include "Objects/VerticalPlane.hpp"
 
-float Sphere::sdf(const Vec3& point) const {
-    return length(point - center_) - radius_;
+float VerticalPlane::sdf(const Vec3& point) const {
+    if (point.x >= center_.x - radius_/2 &&
+    point.x <= center_.x + radius_/2 &&
+    point.y >= center_.y - radius_/2 &&
+    point.y <= center_.y + radius_/2)
+{
+}
 }
 
-Vec3 Sphere::normal(const Vec3& point) const {
+Vec3 VerticalPlane::normal(const Vec3& point) const {
     return normalize(point - center_);
 }
 
-std::optional<Hit> Sphere::hit(const Ray& ray,
+std::optional<Hit> VerticalPlane::hit(const Ray& ray,
                                 float intersectionEpsilon,
                                 float maxDistance) const {
     
@@ -23,7 +28,7 @@ std::optional<Hit> Sphere::hit(const Ray& ray,
         Hit hit;
         hit.t = t;
         hit.point = ray.origin + hit.t * ray.direction;
-        hit.normal = Sphere::normal(hit.point);
+        hit.normal = VerticalPlane::normal(hit.point);
         hit.uv = {0.0f, 0.0f};
         hit.object = this;
 

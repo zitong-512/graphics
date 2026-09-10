@@ -14,7 +14,7 @@ public:
         : Object(std::move(material), std::move(shader)),
           center_(center),
           radius_(radius),
-          halfHeight_(height * 0.5f) {}
+          height_(height) {}
 
     float sdf(const Vec3& point) const override;
     std::optional<Hit> hit(const Ray& ray, float intersectionEpsilon, float maxDistance) const override;
@@ -22,5 +22,5 @@ public:
 private:
     Vec3 center_;
     float radius_;
-    float halfHeight_;
+    float height_;
 };

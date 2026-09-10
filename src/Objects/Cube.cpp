@@ -12,3 +12,7 @@ float Cube::sdf(const Vec3& point) const {
 
     return outside + inside;
 }
+
+  
+ 
+ 

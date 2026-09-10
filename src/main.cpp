@@ -16,13 +16,13 @@ namespace {
     Vec3 colorForPixel(int x, int y, int width, int height, Scene scene, RayTracing renderer){
         Vec3 color;
         int sample = scene.sample();
-        for(int i = 0; i <= sample; i++){
-            for(int j = 0; j <= sample; j++){
+        for(int i = 0; i < sample; i++){
+            for(int j = 0; j < sample; j++){
                 Ray ray = scene.camera().rayForPixel(
                     static_cast<float>(x) + static_cast<float>(i) / static_cast<float>(sample), 
                     static_cast<float>(y) + static_cast<float>(j) / static_cast<float>(sample), 
                     width, height);
-                color = color + renderer.color(scene, ray);
+                color = color + renderer.color(scene, ray, 10);
             }
         }
         return color / (static_cast<float>(sample) * static_cast<float>(sample));

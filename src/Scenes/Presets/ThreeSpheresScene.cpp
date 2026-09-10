@@ -44,27 +44,28 @@ ScenePreset scenes::threeSpheres::makeScene() {
         32.0f
     };
     Material reflectiveSphereMaterial = sphereMaterial;
-    reflectiveSphereMaterial.reflectiveness = 1.0f;
+    reflectiveSphereMaterial.reflectiveness = 0.0f;
+    reflectiveSphereMaterial.transmissivity = 0.0f;
+    reflectiveSphereMaterial.refractiveIndex = 1.5f;
     constexpr float sphereRadius = 0.5f;
 
     ObjectPtr toonSphere = std::make_shared<Sphere>(
         Vec3{-1.05f, 0.0f, 1.0f},
         sphereRadius,
-        sphereMaterial,
+        reflectiveSphereMaterial,
         std::make_shared<BlinnPhongShader>()
     );
-    ObjectPtr ambientSphere = std::make_shared<Cylinder>(
+    ObjectPtr ambientSphere = std::make_shared<Sphere>(
         Vec3{0.0f, 0.0f, 1.0f},
         sphereRadius,
-        4.0f,
         reflectiveSphereMaterial,
         std::make_shared<BlinnPhongShader>()
     );
     ObjectPtr blinnPhongSphere = std::make_shared<Cylinder>(
         Vec3{1.05f, 0.0f, 1.0f},
         sphereRadius,
-        4.0f,
-        sphereMaterial,
+       1.0f,
+        reflectiveSphereMaterial,
         std::make_shared<BlinnPhongShader>()
     );
 

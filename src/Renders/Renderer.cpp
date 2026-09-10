@@ -64,7 +64,7 @@ std::vector<LightPtr> Renderer::visibleLights(const Scene& scene, const Hit& hit
 
 /* Final color */
 
-Vec3 Renderer::color(const Scene& scene, const Ray& ray) const {
+Vec3 Renderer::color(const Scene& scene, const Ray& ray, int depth) const {
     const std::optional<Hit> hit = closestHit(scene, ray, maxDistance_);
     if (!hit || hit->object == nullptr) { return scene.background(); }
 
@@ -75,15 +75,15 @@ Vec3 Renderer::color(const Scene& scene, const Ray& ray) const {
         std::clamp(material.transmissivity, 0.0f, 1.0f - reflectiveness);
     const float surfaceWeight = 1.0f - reflectiveness - transmission;
 
-    Vec3 result = surfaceWeight * surfaceColor;
+    Vec3 color = surfaceWeight * surfaceColor;
     if (reflectiveness > 0.0f) {
-        // Add reflection color
+       color = color + reflectionColor(scene, ray, *hit, depth - 1);
     }
     if (transmission > 0.0f) {
-        // Add refraction color
+        color = color + refractionColor(scene, ray, *hit);
     }
 
-    return result;
+    return color;
 }
 
 /* Local color */
@@ -106,12 +106,13 @@ Ray Renderer::reflectedRay(const Ray& incomingRay, const Hit& hit) const {
 }
 
 Vec3 Renderer::reflectionColor(
-    const Scene& scene, const Ray& incomingRay, const Hit& hit) const {
+    const Scene& scene, const Ray& incomingRay, const Hit& hit, int depth) const {
+    const Ray& reflected = reflectedRay(incomingRay, hit);
     const std::optional<Hit> reflectedHit = closestHit(
         scene, reflectedRay(incomingRay, hit), maxDistance_);
-    if (!reflectedHit || reflectedHit->object == nullptr) { return scene.background(); }
+    if (!reflectedHit || reflectedHit->object == nullptr) {return scene.background(); }
 
-    return localColor(scene, *reflectedHit);
+    return color(scene, reflected, depth - 1);
 }
 
 
@@ -148,23 +149,17 @@ Vec3 Renderer::refractionColor(
         hit.object->material().refractiveIndex;
 
     // Exercise 5: replace this fixed straight-through ray.
-    const std::optional<Ray> entryRay = Ray{
-        hit.point - shadowBias_ * normalize(hit.normal),
-        normalize(incomingRay.direction)
-    };
-    if (!entryRay) { return scene.background(); }
 
+    const std::optional<Ray> entryRay = refractedRay(incomingRay, hit, airRefractiveIndex, objectRefractiveIndex);
+    if (!entryRay) { return scene.background(); }
     const std::optional<float> exit = exitDistance(*hit.object, *entryRay, maxDistance_);
     if (!exit) { return scene.background(); }
+    const std::optional<Ray> exitRay = refractedRay(*entryRay, hit, objectRefractiveIndex, airRefractiveIndex);
 
     const Vec3 exitPoint = entryRay->at(*exit);
-    const Hit exitHit{*exit, exitPoint, hit.object->normal(exitPoint),
+    const Hit exitHit{*exit, exitPoint, hit.object->normal(exitPoint), 
         hit.object->textureCoordinates(exitPoint), hit.object};
     // Exercise 6: replace this fixed straight-through ray.
-    const std::optional<Ray> exitRay = Ray{
-        exitPoint + shadowBias_ * normalize(exitHit.normal),
-        entryRay->direction
-    };
     if (!exitRay) { return scene.background(); }
 
     const std::optional<Hit> refractedHit = closestHit(scene, *exitRay, maxDistance_);

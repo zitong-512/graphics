@@ -19,7 +19,7 @@ public:
     float shadow(const Scene& scene,
                  const Hit& hit,
                  const PointLight& light) const;
-    Vec3 color(const Scene& scene, const Ray& ray) const;
+    Vec3 color(const Scene& scene, const Ray& ray, int depth) const;
 
 protected:
     virtual std::optional<Hit> closestHit(const Scene& scene,
@@ -38,7 +38,8 @@ private:
     Vec3 localColor(const Scene& scene, const Hit& hit) const;
     Vec3 reflectionColor(const Scene& scene,
                          const Ray& incomingRay,
-                         const Hit& hit) const;
+                         const Hit& hit,
+                         int depth) const;
     Ray reflectedRay(const Ray& incomingRay, const Hit& hit) const;
     Vec3 refractionColor(const Scene& scene,
                          const Ray& incomingRay,
