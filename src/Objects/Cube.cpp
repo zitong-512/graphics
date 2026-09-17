@@ -20,14 +20,22 @@ std::optional<Hit> Cube::hit(const Ray& ray,
     const Vec3 boxMin = center_ - Vec3{radius_, radius_, radius_};
     const Vec3 boxMax = center_ + Vec3{radius_, radius_, radius_};
 
-    const float ty1 = dot((boxMin - ray.origin), {0.0f, 1.0f, 0.0f}) / dot(ray.direction, {0.0f, 1.0f, 0.0f});
-    const float ty2 = dot((boxMax - ray.origin), {0.0f, 1.0f, 0.0f}) / dot(ray.direction, {0.0f, 1.0f, 0.0f});
+    const float tx1 = (boxMin.x - ray.origin.x) / ray.direction.x;
+    const float tx2 = (boxMax.x - ray.origin.x) / ray.direction.x;
+    const float ty1 = (boxMin.y - ray.origin.y) / ray.direction.y;
+    const float ty2 = (boxMax.y - ray.origin.y) / ray.direction.y;
+    const float tz1 = (boxMin.z - ray.origin.z) / ray.direction.z;
+    const float tz2 = (boxMax.z - ray.origin.z) / ray.direction.z;
 
     const float tNear = std::max({
-        std::min(ty1, ty2)
+        std::min(tx1, tx2),
+        std::min(ty1, ty2),
+        std::min(tz1, tz2)
     });
     const float tFar = std::min({
-        std::max(ty1, ty2)
+        std::max(tx1, tx2),
+        std::max(ty1, ty2),
+        std::max(tz1, tz2)
     });
 
     if (tNear > tFar || tFar < intersectionEpsilon) {
@@ -44,8 +52,16 @@ std::optional<Hit> Cube::hit(const Ray& ray,
     hit.point = ray.at(t);
     if (t == ty1) {
         hit.normal = {0.0f, -1.0f, 0.0f};
-    } else {
+    } else if (t == ty2) {
         hit.normal = {0.0f, 1.0f, 0.0f};
+    } else if (t == tx1) {
+        hit.normal = {-1.0f, 0.0f, 0.0f};
+    } else if (t == tx2) {
+        hit.normal = {1.0f, 0.0f, 0.0f};
+    } else if (t == tz1) {
+        hit.normal = {0.0f, 0.0f, -1.0f};
+    } else if (t == tz2) {
+        hit.normal = {0.0f, 0.0f, 1.0f};
     }
     hit.uv = {0.0f, 0.0f};
     hit.object = this;
