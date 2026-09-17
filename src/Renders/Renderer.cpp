@@ -128,14 +128,15 @@ std::optional<Ray> Renderer::refractedRay(const Ray& incomingRay, const Hit& hit
     Vec3 normal = normalize(hit.normal);
     if (dot(incident, normal) >= 0.0f) { normal = -normal; }
 
-    const float cos1 = 0.5f;
-    [[maybe_unused]] const float sin1 = 0.5f;
+    const float cos1 = 0.9f;
+    const float sin1 = 0.1f;
 
     const float indexRatio = sourceRefractiveIndex / destinationRefractiveIndex;
-    const float sin2 = 0.5f;
-    if (sin2 > 1.0f) { return std::nullopt; }
 
-    const float cos2 = 0.5f;
+    const float sin2 = 0.1f;
+    if (sin2 > 1.0f) { return std::nullopt; }
+    const float cos2 = 0.9f;
+
     const Vec3 direction =
         normalize(indexRatio * incident + (indexRatio * cos1 - cos2) * normal);
 
@@ -154,11 +155,12 @@ Vec3 Renderer::refractionColor(
     if (!entryRay) { return scene.background(); }
     const std::optional<float> exit = exitDistance(*hit.object, *entryRay, maxDistance_);
     if (!exit) { return scene.background(); }
-    const std::optional<Ray> exitRay = refractedRay(*entryRay, hit, objectRefractiveIndex, airRefractiveIndex);
 
     const Vec3 exitPoint = entryRay->at(*exit);
     const Hit exitHit{*exit, exitPoint, hit.object->normal(exitPoint), 
         hit.object->textureCoordinates(exitPoint), hit.object};
+    const std::optional<Ray> exitRay = refractedRay(*entryRay, exitHit, objectRefractiveIndex, airRefractiveIndex);
+
     // Exercise 6: replace this fixed straight-through ray.
     if (!exitRay) { return scene.background(); }
 

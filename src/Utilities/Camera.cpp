@@ -3,11 +3,23 @@
 Camera::Camera(Vec3 position, Vec3 target, Vec3 up,
                float viewportWidth, float viewportHeight)
     : position_(position),
-      forward_(normalize(target - position)),
-      right_(normalize(cross(forward_, up))),
-      up_(normalize(cross(right_, forward_))),
+      target_(target),
+      referenceUp_(up),
       viewportWidth_(viewportWidth),
-      viewportHeight_(viewportHeight) {}
+      viewportHeight_(viewportHeight) {
+    updateBasis();
+}
+
+void Camera::setPosition(Vec3 position) {
+    position_ = position;
+    updateBasis();
+}
+
+void Camera::updateBasis() {
+    forward_ = normalize(target_ - position_);
+    right_ = normalize(cross(forward_, referenceUp_));
+    up_ = normalize(cross(right_, forward_));
+}
 
 Ray Camera::rayForPixel(float x, float y, int imageWidth, int imageHeight) const {
     const float halfWidth = viewportWidth_ * 0.5f;

@@ -1,5 +1,7 @@
 #include "Objects/Cube.hpp"
 
+#include <algorithm>
+
 float Cube::sdf(const Vec3& point) const {
     Vec3 q(std::abs(point.x - center_.x) - radius_, std::abs(point.y - center_.y) - radius_, std::abs(point.z - center_.z) - radius_);
 
@@ -12,34 +14,42 @@ float Cube::sdf(const Vec3& point) const {
 
     return outside + inside;
 }
-std::optional<Hit> Cube::hit(const Ray& ray, float intersectionEpsilon, float maxDistance) const{
-    float ty = std::min((radius_ + center_.y - ray.origin.y) / ray.direction.y, (- radius_ + center_.y - ray.origin.y) / ray.direction.y);
-    if (ty < 0){
-        float ty = std::max((radius_ + center_.y - ray.origin.y) / ray.direction.y, (- radius_ + center_.y - ray.origin.y) / ray.direction.y);
-    }
-    float tx = std::min((radius_ + center_.x - ray.origin.x) / ray.direction.x, (- radius_ + center_.x - ray.origin.x) / ray.direction.x);
-    if (tx < 0){
-        float tx = std::max((radius_ + center_.x - ray.origin.x) / ray.direction.x, (- radius_ + center_.x - ray.origin.x) / ray.direction.x);
+std::optional<Hit> Cube::hit(const Ray& ray,
+                             float intersectionEpsilon,
+                             float maxDistance) const {
+    const Vec3 boxMin = center_ - Vec3{radius_, radius_, radius_};
+    const Vec3 boxMax = center_ + Vec3{radius_, radius_, radius_};
+
+    const float ty1 = dot((boxMin - ray.origin), {0.0f, 1.0f, 0.0f}) / dot(ray.direction, {0.0f, 1.0f, 0.0f});
+    const float ty2 = dot((boxMax - ray.origin), {0.0f, 1.0f, 0.0f}) / dot(ray.direction, {0.0f, 1.0f, 0.0f});
+
+    const float tNear = std::max({
+        std::min(ty1, ty2)
+    });
+    const float tFar = std::min({
+        std::max(ty1, ty2)
+    });
+
+    if (tNear > tFar || tFar < intersectionEpsilon) {
+        return std::nullopt;
     }
 
-    float t = std::min(ty, tx);
-    if (t < 0){t = std::max(ty, tx);}
-
-    if (t > 0.0f && t < maxDistance && t > intersectionEpsilon  ) {
-        if ((t == ty && center_.x - radius_ < ray.at(t).x && ray.at(t).x < center_.x + radius_ && ray.at(t).z < center_.z + radius_)
-    || (t == tx && center_.y - radius_ < ray.at(t).y && ray.at(t).y < center_.y + radius_ && ray.at(t).z < center_.z + radius_)){
-        Hit hit;
-        hit.t = t;
-        hit.point = ray.at(t); 
-        if (t == ty){hit.normal = Vec3({0.0f, -1.0f, 0.0f});}
-        if (t == tx){hit.normal = Vec3({-1.0f, 0.0f, 0.0f});}
-        hit.uv = {0.0f, 0.0f};
-        hit.object = this;
-
-        return hit;
-        }
-    return std::nullopt;
+    const float t = tNear >= intersectionEpsilon ? tNear : tFar;
+    if (t > maxDistance) {
+        return std::nullopt;
     }
+
+    Hit hit;
+    hit.t = t;
+    hit.point = ray.at(t);
+    if (t == ty1) {
+        hit.normal = {0.0f, -1.0f, 0.0f};
+    } else {
+        hit.normal = {0.0f, 1.0f, 0.0f};
+    }
+    hit.uv = {0.0f, 0.0f};
+    hit.object = this;
+    return hit;
 }
 
  

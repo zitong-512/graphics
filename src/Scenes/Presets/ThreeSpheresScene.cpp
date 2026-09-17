@@ -22,7 +22,7 @@ ScenePreset scenes::threeSpheres::makeScene() {
         {1.0f, -2.0f, 2.5f}, // Position
         {0.0f, 1.0f, 0.0f},  // Target
         {0.0f, 0.0f, 1.0f},  // Up
-        8.0f / 3.0f,         // Viewport width
+        32.0f / 9.0f,        // Viewport width
         2.0f                 // Viewport height
     };
 
@@ -46,11 +46,11 @@ ScenePreset scenes::threeSpheres::makeScene() {
     };
     Material reflectiveSphereMaterial = sphereMaterial;
     reflectiveSphereMaterial.reflectiveness = 0.0f;
-    reflectiveSphereMaterial.transmissivity = 0.0f;
+    reflectiveSphereMaterial.transmissivity = 1.0f;
     reflectiveSphereMaterial.refractiveIndex = 1.5f;
     constexpr float sphereRadius = 0.5f;
 
-    ObjectPtr toonSphere = std::make_shared<Cube>(
+    ObjectPtr toonSphere = std::make_shared<Sphere>(
         Vec3{-1.05f, 0.0f, 1.0f},
         sphereRadius,
         reflectiveSphereMaterial,

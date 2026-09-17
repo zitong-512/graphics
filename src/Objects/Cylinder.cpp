@@ -1,65 +1,111 @@
 #include "Objects/Cylinder.hpp"
 
-// Cylinder TODOs, roughly in order:
+// Cylinder TODOs:
 // 1. Give sdf() a real cylinder distance.
-// 2. Bail out when the ray is parallel to the cylinder.
-// 3. Check the discriminant before taking its square root.
-// 4. Calculate both quadratic roots correctly.
-// 5. Pick the nearest root that is actually in front of the ray.
-// 6. Normalize the hit normal.
-// 7. Give the cylinder useful UV coordinates.
+// 2. Give the cylinder useful UV coordinates.
 
 float Cylinder::sdf(const Vec3&) const {
     return 0.0f;
 }
 
-std::optional<Hit> Cylinder::hit(const Ray& ray, float intersectionEpsilon, float maxDistance) const{
-    Vec2 d = planar(ray.direction);
-    Vec2 e = planar (ray.origin);
-    Vec2 f = planar(center_);
+Vec3 Cylinder::normal(const Vec3& point) const {
+    const float zMin = 0.0f;
+    const float zMax = 0.0f;
+    const Vec3 radial{0.0f, 0.0f, 0.0f};
 
-    float a = dot(d, d);
-    float b = 2 * dot(d, (e - f));
-    float c = dot((e - f), (e - f)) - radius_ * radius_;
-    
-    float discriminant = b * b - 4 * a * c;
+    const float distanceToBottom = 0.0f;
+    const float distanceToTop = 0.0f;
+    const float distanceToWall = 0.0f;
 
-    //if (discriminant < 0.0f){return std::nullopt;}
-
-    float s = std::sqrt(discriminant);
-    float t = std::min(-b + s, -b - s)/ (2 * a);
-
-    if (t < 0.0f){
-        float t = std::max(-b + s, -b - s)/ (2 * a);
+    if (distanceToBottom <= distanceToWall && distanceToBottom <= distanceToTop) {
+        return {0.0f, 0.0f, -1.0f};
     }
-
-    const float l = dot(Vec3({0.0f, 0.0f, height_}) - ray.origin, Vec3({0.0f, 0.0f, 1.0f})) / dot(ray.direction, Vec3({0.0f, 0.0f, 1.0f}));
-    if (ray.at(t).z <= height_ && ray.at(t).z >= 0.0f){
-        t = l;
+    if (distanceToTop <= distanceToWall) {
+        return {0.0f, 0.0f, 1.0f};
     }
-    if (length(ray.at(l) - Vec3({center_.x, center_.y, height_})) < radius_){
-        if (std::min(t, l) > 0){t = std::min(t, l);}
-        else{t = std::max(t, l);}
-    }
-
-    if (t > 0.0f && t < maxDistance && t > intersectionEpsilon && ray.at(t).z <= height_ && ray.at(t).z >= 0.0f) {
-        Hit hit;
-        hit.t = t;
-        hit.point = ray.at(t); 
-        if (t == l){
-            hit.normal = Vec3({0.0f, 0.0f, height_});
-        }
-        else{
-            Vec2 normal = planar(hit.point) - planar(center_);
-            hit.normal = normalize({normal.x, normal.y, 0.0f});
-        }
-        hit.uv = {0.0f, 0.0f};
-        hit.object = this;
-
-        return hit;
-    }
-    return std::nullopt;
+    return normalize(radial);
 }
 
+std::optional<Hit> Cylinder::hit(const Ray& ray,
+                                 float intersectionEpsilon,
+                                 float maxDistance) const {
+    constexpr float parallelEpsilon = 1.0e-8f;
+    const float zMin = center_.z - 0.5f * height_;
+    const float zMax = center_.z + 0.5f * height_;
 
+    float closestT = maxDistance;
+    Vec3 closestNormal;
+    bool foundHit = false;
+
+    const auto considerHit = [&](float t, const Vec3& normal) {
+        if (t > intersectionEpsilon && t < closestT) {
+            closestT = t;
+            closestNormal = normal;
+            foundHit = true;
+        }
+    };
+
+    // Intersect the curved wall in the XY plane.
+    const Vec2 direction = planar(ray.direction);
+    const Vec2 offset = planar(ray.origin) - planar(center_);
+    const float a = dot(direction, direction);
+
+    if (a > parallelEpsilon) {
+        const float b = 2.0f * dot(direction, offset);
+        const float c = dot(offset, offset) - radius_ * radius_;
+        const float discriminant = b * b - 4.0f * a * c;
+
+        if (discriminant >= 0.0f) {
+            const float root = std::sqrt(discriminant);
+            const float t1 = (-b - root) / (2.0f * a);
+            const float t2 = (-b + root) / (2.0f * a);
+
+            const auto considerWallHit = [&](float t) {
+                const Vec3 point = ray.at(t);
+                if (point.z >= zMin && point.z <= zMax) {
+                    considerHit(
+                        t,
+                        normalize(Vec3{
+                            point.x - center_.x,
+                            point.y - center_.y,
+                            0.0f
+                        })
+                    );
+                }
+            };
+
+            considerWallHit(t1);
+            considerWallHit(t2);
+        }
+    }
+
+    // Intersect the two circular caps.
+    if (std::abs(ray.direction.z) > parallelEpsilon) {
+        const auto considerCapHit = [&](float z, const Vec3& normal) {
+            const float t = (z - ray.origin.z) / ray.direction.z;
+            const Vec3 point = ray.at(t);
+            const float dx = point.x - center_.x;
+            const float dy = point.y - center_.y;
+
+            if (dx * dx + dy * dy <= radius_ * radius_) {
+                considerHit(t, normal);
+            }
+        };
+
+        considerCapHit(zMin, {0.0f, 0.0f, -1.0f});
+        considerCapHit(zMax, {0.0f, 0.0f, 1.0f});
+    }
+
+    if (!foundHit) {
+        return std::nullopt;
+    }
+
+    Hit hit;
+    hit.t = closestT;
+    hit.point = ray.at(closestT);
+    hit.normal = closestNormal;
+    hit.uv = {0.0f, 0.0f};
+    hit.object = this;
+    return hit;
+}
 

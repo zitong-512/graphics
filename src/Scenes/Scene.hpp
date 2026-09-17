@@ -18,6 +18,7 @@ public:
     std::pair<float, const Object*> sdf(const Vec3& point) const;
 
     const Vec3& background() const { return background_; }
+    Camera& camera() { return camera_; }
     const Camera& camera() const { return camera_; }
     const std::vector<LightPtr>& lights() const { return lights_; }
     const std::vector<ObjectPtr>& objects() const { return objects_; }
