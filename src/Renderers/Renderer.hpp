@@ -8,6 +8,7 @@
 #include <optional>
 #include <vector>
 
+// Common interface and shading implementation for all renderers.
 class Renderer {
 public:
     Renderer(float maxDistance = 100.0f,

@@ -1,6 +1,6 @@
 #include "FrameRenderer.hpp"
 
-#include "Renders/Renderer.hpp"
+#include "Renderers/Renderer.hpp"
 #include "Scenes/Scene.hpp"
 
 #include <algorithm>

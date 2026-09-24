@@ -1,7 +1,7 @@
 #include "FrameRenderer.hpp"
 #include "Objects/Sphere.hpp"
-#include "Renders/RayTracing.hpp"
-#include "Renders/Raymarching.hpp"
+#include "Renderers/Raytracing.hpp"
+#include "Renderers/Raymarching.hpp"
 #include "Scenes/Presets/ObjectPlaneScene.hpp"
 
 #include <cstdint>

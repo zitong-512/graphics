@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Renders/Renderer.hpp"
+#include "Renderers/Renderer.hpp"
 
-class RayTracing final : public Renderer {
+class Raytracing final : public Renderer {
 public:
-    RayTracing(float maxDistance = 100.0f,
+    Raytracing(float maxDistance = 100.0f,
                float intersectionEpsilon = 0.001f)
         : Renderer(
               maxDistance,

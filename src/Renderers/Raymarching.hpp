@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Renders/Renderer.hpp"
+#include "Renderers/Renderer.hpp"
 
 class Raymarching final : public Renderer {
 public:

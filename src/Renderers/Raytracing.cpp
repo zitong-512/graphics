@@ -1,6 +1,6 @@
-#include "Renders/RayTracing.hpp"
+#include "Renderers/Raytracing.hpp"
 
-std::optional<Hit> RayTracing::raytrace(const Scene& scene,
+std::optional<Hit> Raytracing::raytrace(const Scene& scene,
                                         const Ray& ray,
                                         float maxDistance) const {
     std::optional<Hit> closest;
@@ -25,18 +25,18 @@ std::optional<Hit> RayTracing::raytrace(const Scene& scene,
     return closest;
 }
 
-std::optional<Hit> RayTracing::raytrace(const Scene& scene,
+std::optional<Hit> Raytracing::raytrace(const Scene& scene,
                                         const Ray& ray) const {
     return raytrace(scene, ray, maxDistance());
 }
 
-std::optional<Hit> RayTracing::closestHit(const Scene& scene,
+std::optional<Hit> Raytracing::closestHit(const Scene& scene,
                                           const Ray& ray,
                                           float maxDistance) const {
     return raytrace(scene, ray, maxDistance);
 }
 
-std::optional<float> RayTracing::exitDistance(const Object& object,
+std::optional<float> Raytracing::exitDistance(const Object& object,
                                               const Ray& ray,
                                               float maxDistance) const {
     const std::optional<Hit> exitHit = object.hit(
