@@ -2,12 +2,12 @@
 
 #include "Scenes/ScenePreset.hpp"
 
-namespace scenes::blinnPhongOctahedron {
+namespace scenes::objectPlane {
     ScenePreset makeScene();
     extern const ScenePreset preset;
 }
 
 namespace scenes {
-    using blinnPhongOctahedron::makeScene;
-    using blinnPhongOctahedron::preset;
+    using objectPlane::makeScene;
+    using objectPlane::preset;
 }

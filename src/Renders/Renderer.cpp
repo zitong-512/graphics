@@ -128,14 +128,14 @@ std::optional<Ray> Renderer::refractedRay(const Ray& incomingRay, const Hit& hit
     Vec3 normal = normalize(hit.normal);
     if (dot(incident, normal) >= 0.0f) { normal = -normal; }
 
-    const float cos1 = 0.9f;
-    const float sin1 = 0.1f;
+    const float cos1 = std::clamp(-dot(incident, normal), 0.0f, 1.0f);
+    const float sin1 = std::sqrt(std::max(0.0f, 1.0f - cos1 * cos1));
 
     const float indexRatio = sourceRefractiveIndex / destinationRefractiveIndex;
 
-    const float sin2 = 0.1f;
+    const float sin2 = indexRatio * sin1;
     if (sin2 > 1.0f) { return std::nullopt; }
-    const float cos2 = 0.9f;
+    const float cos2 = std::sqrt(std::max(0.0f, 1.0f - sin2 * sin2));
 
     const Vec3 direction =
         normalize(indexRatio * incident + (indexRatio * cos1 - cos2) * normal);

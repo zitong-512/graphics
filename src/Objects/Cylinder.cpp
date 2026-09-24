@@ -9,13 +9,14 @@ float Cylinder::sdf(const Vec3&) const {
 }
 
 Vec3 Cylinder::normal(const Vec3& point) const {
-    const float zMin = 0.0f;
-    const float zMax = 0.0f;
-    const Vec3 radial{0.0f, 0.0f, 0.0f};
+    const float zMin = center_.z - 0.5f * height_;
+    const float zMax = center_.z + 0.5f * height_;
+    const Vec3 radial{point.x - center_.x, point.y - center_.y, 0.0f};
+    const float radialLength = length(radial);
 
-    const float distanceToBottom = 0.0f;
-    const float distanceToTop = 0.0f;
-    const float distanceToWall = 0.0f;
+    const float distanceToBottom = std::abs(point.z - zMin);
+    const float distanceToTop = std::abs(point.z - zMax);
+    const float distanceToWall = std::abs(radialLength - radius_);
 
     if (distanceToBottom <= distanceToWall && distanceToBottom <= distanceToTop) {
         return {0.0f, 0.0f, -1.0f};
@@ -23,7 +24,12 @@ Vec3 Cylinder::normal(const Vec3& point) const {
     if (distanceToTop <= distanceToWall) {
         return {0.0f, 0.0f, 1.0f};
     }
-    return normalize(radial);
+    // A wall normal is undefined on the cylinder axis. This fallback only
+    // matters for points that are not on a non-degenerate cylinder's wall.
+    if (radialLength == 0.0f) {
+        return {1.0f, 0.0f, 0.0f};
+    }
+    return radial / radialLength;
 }
 
 std::optional<Hit> Cylinder::hit(const Ray& ray,
@@ -108,4 +114,3 @@ std::optional<Hit> Cylinder::hit(const Ray& ray,
     hit.object = this;
     return hit;
 }
-

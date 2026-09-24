@@ -1,9 +1,9 @@
 #include "FrameRenderer.hpp"
+#include "Objects/Sphere.hpp"
 #include "Renders/RayTracing.hpp"
-#include "Scenes/Presets/ThreeSpheresScene.hpp"
-#include "Utilities/Camera.hpp"
+#include "Renders/Raymarching.hpp"
+#include "Scenes/Presets/ObjectPlaneScene.hpp"
 
-#include <cmath>
 #include <cstdint>
 #include <cstdlib>
 #include <filesystem>
@@ -19,12 +19,14 @@ namespace {
 constexpr int width = 1920;
 constexpr int height = 1080;
 constexpr int framesPerSecond = 3;
-constexpr int frameCount = 4 * framesPerSecond;
-constexpr float pi = 3.14159265358979323846f;
+constexpr int frameCount = 2 * framesPerSecond;
 
-Scene& sceneForFrame(Scene& scene) {
-    scene.camera().setPosition(
-        scene.camera().position() - Vec3{0.1f, 0.0f, 0.0f});
+Scene& sceneForFrame(Scene& scene, int frame) {
+    auto sphere = std::dynamic_pointer_cast<Sphere>(scene.objects().at(0));
+    if (sphere) {
+        // Change sphere position
+        sphere->setCenter(sphere->center() + Vec3{0.0f, 0.0f, 0.5f});
+    }
     return scene;
 }
 
@@ -54,16 +56,16 @@ std::string quoted(const std::filesystem::path& path) {
 int main() {
     const ScenePreset preset = scenes::makeScene();
     Scene scene = preset.scene();
-    RayTracing renderer;
+    Raymarching renderer;
     const FrameRenderer frameRenderer{width, height};
 
     const std::filesystem::path renderDirectory = preset.outputPath().parent_path();
     const std::filesystem::path framesDirectory = renderDirectory / "video_frames";
-    const std::filesystem::path videoPath = renderDirectory / "ThreeSpheresOrbit.mp4";
+    const std::filesystem::path videoPath = renderDirectory / "ObjectPlane.mp4";
     std::filesystem::create_directories(framesDirectory);
 
     for (int frame = 0; frame < frameCount; ++frame) {
-        const Scene& animatedScene = sceneForFrame(scene);
+        const Scene& animatedScene = sceneForFrame(scene, frame);
         const std::vector<std::uint8_t> pixels =
             frameRenderer.render(animatedScene, renderer);
         const std::filesystem::path outputPath = framePath(framesDirectory, frame);

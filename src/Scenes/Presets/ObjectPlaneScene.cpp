@@ -1,15 +1,13 @@
-#include "Scenes/Presets/ThreeSpheresScene.hpp"
+#include "Scenes/Presets/ObjectPlaneScene.hpp"
 
 #include "Lights/AmbientLight.hpp"
 #include "Lights/PointLight.hpp"
 #include "Materials/Material.hpp"
+#include "Objects/Cube.hpp"
+#include "Objects/MorphObject.hpp"
 #include "Objects/Plane.hpp"
 #include "Objects/Sphere.hpp"
-#include "Objects/Cylinder.hpp"
-#include "Objects/Cube.hpp"
-#include "Shaders/AmbientShader.hpp"
 #include "Shaders/BlinnPhongShader.hpp"
-#include "Shaders/ToonShader.hpp"
 #include "Textures/CheckerboardTexture.hpp"
 
 #include <filesystem>
@@ -17,7 +15,7 @@
 #include <utility>
 #include <vector>
 
-ScenePreset scenes::threeSpheres::makeScene() {
+ScenePreset scenes::objectPlane::makeScene() {
     Camera camera{
         {1.0f, -2.0f, 2.5f}, // Position
         {0.0f, 1.0f, 0.0f},  // Target
@@ -39,36 +37,40 @@ ScenePreset scenes::threeSpheres::makeScene() {
         )
     };
 
-    const Material sphereMaterial{
+    const Material baseObjectMaterial{
         {0.3f, 0.6f, 0.9f},
         {1.0f, 1.0f, 1.0f},
         32.0f
     };
-    Material reflectiveSphereMaterial = sphereMaterial;
-    reflectiveSphereMaterial.reflectiveness = 0.0f;
-    reflectiveSphereMaterial.transmissivity = 1.0f;
-    reflectiveSphereMaterial.refractiveIndex = 1.5f;
-    constexpr float sphereRadius = 0.5f;
+    Material objectMaterial = baseObjectMaterial;
+    objectMaterial.reflectiveness = 0.0f;
+    objectMaterial.transmissivity = 0.0f;
+    objectMaterial.refractiveIndex = 1.5f;
+    constexpr float objectRadius = 0.5f;
+    const Vec3 objectCenter{0.0f, 0.0f, 1.0f};
+    const auto objectShader = std::make_shared<BlinnPhongShader>();
 
-    ObjectPtr toonSphere = std::make_shared<Cube>(
-        Vec3{-1.05f, 0.0f, 1.0f},
-        sphereRadius,
-        reflectiveSphereMaterial,
-        std::make_shared<BlinnPhongShader>()
+    ObjectPtr sphere = std::make_shared<Sphere>(
+        objectCenter,
+        objectRadius,
+        objectMaterial,
+        objectShader
     );
-    ObjectPtr ambientSphere = std::make_shared<Sphere>(
-        Vec3{0.0f, 0.0f, 1.0f},
-        sphereRadius,
-        reflectiveSphereMaterial,
-        std::make_shared<BlinnPhongShader>()
+
+    /*
+    ObjectPtr cube = std::make_shared<Cube>(
+        objectCenter,
+        objectRadius,
+        objectMaterial,
+        objectShader
     );
-    ObjectPtr blinnPhongSphere = std::make_shared<Cylinder>(
-        Vec3{1.05f, 0.0f, 1.0f},
-        sphereRadius,
-       1.0f,
-        reflectiveSphereMaterial,
-        std::make_shared<BlinnPhongShader>()
+    ObjectPtr object = std::make_shared<MorphObject>(
+        std::move(sphere),
+        std::move(cube),
+        objectMaterial,
+        objectShader
     );
+    */
 
     const Material planeMaterial{
         {0.35f, 0.35f, 0.35f},
@@ -90,9 +92,7 @@ ScenePreset scenes::threeSpheres::makeScene() {
     );
 
     std::vector<ObjectPtr> objects{
-        std::move(toonSphere),
-        std::move(ambientSphere),
-        std::move(blinnPhongSphere),
+        std::move(sphere),
         std::move(plane)
     };
 
@@ -103,10 +103,10 @@ ScenePreset scenes::threeSpheres::makeScene() {
             std::move(lights),
             std::move(objects)
         },
-        std::filesystem::path{GRAPHICS_RENDER_DIR} / "ThreeSpheres.ppm"
+        std::filesystem::path{GRAPHICS_RENDER_DIR} / "ObjectPlane.ppm"
     };
 }
 
-namespace scenes::threeSpheres {
+namespace scenes::objectPlane {
     const ScenePreset preset = makeScene();
 }

@@ -20,6 +20,9 @@ public:
                            float intersectionEpsilon,
                            float maxDistance) const override;
 
+    const Vec3& center() const { return center_; }
+    void setCenter(Vec3 center) { center_ = center; }
+
 private:
     Vec3 center_;
     float radius_;

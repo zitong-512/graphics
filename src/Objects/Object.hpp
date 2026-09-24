@@ -29,4 +29,4 @@ private:
     std::shared_ptr<const Shader> shader_;
 };
 
-using ObjectPtr = std::shared_ptr<const Object>;
+using ObjectPtr = std::shared_ptr<Object>;

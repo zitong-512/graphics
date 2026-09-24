@@ -1,7 +1,6 @@
 #include "FrameRenderer.hpp"
-#include "Renders/RayTracing.hpp"
-// #include "Scenes/Presets/Primitives/BlinnPhongPrimitiveScene.hpp"
-#include "Scenes/Presets/ThreeSpheresScene.hpp"
+#include "Renders/Raymarching.hpp"
+#include "Scenes/Presets/ObjectPlaneScene.hpp"
 
 #include <cstdint>
 #include <filesystem>
@@ -15,7 +14,7 @@ int main() {
 
     const ScenePreset preset = scenes::makeScene();
     const Scene& scene = preset.scene();
-    RayTracing renderer;
+    Raymarching renderer;
     const FrameRenderer frameRenderer{width, height};
     const std::vector<std::uint8_t> pixels = frameRenderer.render(scene, renderer);
 
