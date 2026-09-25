@@ -4,6 +4,7 @@
 #include "Renderers/Raymarching.hpp"
 #include "Scenes/Presets/ObjectPlaneScene.hpp"
 
+#include <cmath>
 #include <cstdint>
 #include <cstdlib>
 #include <filesystem>
@@ -18,15 +19,35 @@
 namespace {
 constexpr int width = 1920;
 constexpr int height = 1080;
-constexpr int framesPerSecond = 3;
+constexpr int framesPerSecond = 30;
 constexpr int frameCount = 2 * framesPerSecond;
 
 Scene& sceneForFrame(Scene& scene, int frame) {
-    auto sphere = std::dynamic_pointer_cast<Sphere>(scene.objects().at(0));
-    if (sphere) {
-        // Change sphere position
-        sphere->setCenter(sphere->center() + Vec3{0.0f, 0.0f, 0.5f});
+    auto sphere1 = std::dynamic_pointer_cast<Sphere>(scene.objects().at(0));
+    auto sphere2 = std::dynamic_pointer_cast<Sphere>(scene.objects().at(1));
+    if (!sphere1 || !sphere2) {
+        return scene;
     }
+
+    static const Vec3 initialSphere1Center = sphere1->getCenter();
+    static const Vec3 initialSphere2Center = sphere2->getCenter();
+    static const Vec3 initialSphere2Orientation = sphere2->getOrientation();
+    static const float totalDisplacementY = -(
+        std::abs(initialSphere1Center.y - initialSphere2Center.y)
+        - 2.0f * sphere1->getRadius()
+    );
+
+    const float t = static_cast<float>(frame) / (frameCount - 1);
+    const float displacementY = totalDisplacementY * t;
+
+    sphere2->setCenter(
+        initialSphere2Center + Vec3{0.0f, displacementY, 0.0f}
+    );
+    sphere2->setOrientation(
+        initialSphere2Orientation
+        + Vec3{-displacementY / sphere2->getRadius(), 0.0f, 0.0f}
+    );
+
     return scene;
 }
 
@@ -56,7 +77,7 @@ std::string quoted(const std::filesystem::path& path) {
 int main() {
     const ScenePreset preset = scenes::makeScene();
     Scene scene = preset.scene();
-    Raymarching renderer;
+    Raytracing renderer;
     const FrameRenderer frameRenderer{width, height};
 
     const std::filesystem::path renderDirectory = preset.outputPath().parent_path();

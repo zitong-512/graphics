@@ -27,10 +27,17 @@ struct Material {
     Vec3 objectColor{0.4f, 0.4f, 0.85f};
     Vec3 specularColor{1.0f, 1.0f, 1.0f};
     float shininess = 32.0f;
-    TexturePtr colorTexture;
     float reflectiveness = 0.0f;
     float transmissivity = 0.0f;
     float refractiveIndex = 1.5f;
+
+    void setTransmissivity(float t){ transmissivity = t; }
+    const float getTransmissivity() const { return transmissivity; }
+
+    void setColor(const Vec3& color){ objectColor = color; }
+    const Vec3& getColor() const { return objectColor; }
+
+    TexturePtr colorTexture;
 
     Vec3 colorAt(const Vec2& uv) const {
         return colorTexture ? colorTexture->sample(uv) : objectColor;

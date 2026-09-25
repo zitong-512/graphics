@@ -8,6 +8,7 @@
 #include "Objects/Plane.hpp"
 #include "Objects/Sphere.hpp"
 #include "Shaders/BlinnPhongShader.hpp"
+#include "Textures/BandsTexture.hpp"
 #include "Textures/CheckerboardTexture.hpp"
 
 #include <filesystem>
@@ -43,6 +44,11 @@ ScenePreset scenes::objectPlane::makeScene() {
         32.0f
     };
     Material objectMaterial = baseObjectMaterial;
+    objectMaterial.colorTexture = std::make_shared<BandsTexture>(
+        Vec3{0.04f, 0.12f, 0.22f},
+        Vec3{0.45f, 0.85f, 1.0f},
+        10
+    );
     objectMaterial.reflectiveness = 0.0f;
     objectMaterial.transmissivity = 0.0f;
     objectMaterial.refractiveIndex = 1.5f;
@@ -52,6 +58,12 @@ ScenePreset scenes::objectPlane::makeScene() {
 
     ObjectPtr sphere = std::make_shared<Sphere>(
         objectCenter,
+        objectRadius,
+        objectMaterial,
+        objectShader
+    );
+    ObjectPtr sphere2 = std::make_shared<Sphere>(
+        objectCenter + Vec3({0.0f, 5.0f, 0.0f}),
         objectRadius,
         objectMaterial,
         objectShader
@@ -93,6 +105,7 @@ ScenePreset scenes::objectPlane::makeScene() {
 
     std::vector<ObjectPtr> objects{
         std::move(sphere),
+        std::move(sphere2),
         std::move(plane)
     };
 

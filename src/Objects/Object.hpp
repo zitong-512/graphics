@@ -24,6 +24,13 @@ public:
     const Material& material() const { return material_; }
     const Shader& shader() const { return *shader_; }
 
+    void setTransmissivity(float t) { material_.setTransmissivity(t); }
+    const float getTransmissivity() const { return material_.getTransmissivity(); }
+
+    void setColor(const Vec3& color) { material_.setColor(color); }
+    const Vec3& getColor() const { return material_.getColor(); }
+
+
 private:
     Material material_;
     std::shared_ptr<const Shader> shader_;
