@@ -57,13 +57,20 @@ ScenePreset scenes::objectPlane::makeScene() {
     const auto objectShader = std::make_shared<BlinnPhongShader>();
 
     ObjectPtr sphere = std::make_shared<Sphere>(
-        objectCenter,
+        objectCenter + Vec3({0.0f, -objectRadius * 2, 0.0f}),
         objectRadius,
         objectMaterial,
         objectShader
     );
     ObjectPtr sphere2 = std::make_shared<Sphere>(
         objectCenter + Vec3({0.0f, 5.0f, 0.0f}),
+        objectRadius,
+        objectMaterial,
+        objectShader
+    );
+
+    ObjectPtr sphere3 = std::make_shared<Sphere>(
+        objectCenter,
         objectRadius,
         objectMaterial,
         objectShader
@@ -106,6 +113,7 @@ ScenePreset scenes::objectPlane::makeScene() {
     std::vector<ObjectPtr> objects{
         std::move(sphere),
         std::move(sphere2),
+        std::move(sphere3),
         std::move(plane)
     };
 
