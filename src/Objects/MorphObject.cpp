@@ -16,7 +16,8 @@ MorphObject::MorphObject(ObjectPtr from,
 }
 
 float MorphObject::sdf(const Vec3& point) const {
-    return from_->sdf(point) * (1.0f - blend_) + to_->sdf(point) * blend_;
+    return from_->transformedSdf(point) * (1.0f - blend_)
+        + to_->transformedSdf(point) * blend_;
 }
 
 void MorphObject::setBlend(float blend) {

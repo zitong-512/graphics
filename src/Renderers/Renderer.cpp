@@ -157,8 +157,13 @@ Vec3 Renderer::refractionColor(
     if (!exit) { return scene.background(); }
 
     const Vec3 exitPoint = entryRay->at(*exit);
-    const Hit exitHit{*exit, exitPoint, hit.object->normal(exitPoint), 
-        hit.object->textureCoordinates(exitPoint), hit.object};
+    const Hit exitHit{
+        *exit,
+        exitPoint,
+        hit.object->transformedNormal(exitPoint),
+        hit.object->transformedTextureCoordinates(exitPoint),
+        hit.object
+    };
     const std::optional<Ray> exitRay = refractedRay(*entryRay, exitHit, objectRefractiveIndex, airRefractiveIndex);
 
     // Exercise 6: replace this fixed straight-through ray.

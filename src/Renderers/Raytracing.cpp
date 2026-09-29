@@ -11,7 +11,7 @@ std::optional<Hit> Raytracing::raytrace(const Scene& scene,
             continue;
         }
 
-        std::optional<Hit> hit = object->hit(
+        std::optional<Hit> hit = object->transformedHit(
             ray,
             intersectionEpsilon_,
             closestDistance
@@ -39,7 +39,7 @@ std::optional<Hit> Raytracing::closestHit(const Scene& scene,
 std::optional<float> Raytracing::exitDistance(const Object& object,
                                               const Ray& ray,
                                               float maxDistance) const {
-    const std::optional<Hit> exitHit = object.hit(
+    const std::optional<Hit> exitHit = object.transformedHit(
         ray,
         intersectionEpsilon_,
         maxDistance

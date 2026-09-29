@@ -3,6 +3,7 @@
 #include "Renderers/Raytracing.hpp"
 #include "Renderers/Raymarching.hpp"
 #include "Scenes/Presets/ObjectPlaneScene.hpp"
+#include "Utilities/Transform.hpp"
 
 #include <cmath>
 #include <cstdint>
@@ -21,6 +22,8 @@ constexpr int width = 1920;
 constexpr int height = 1080;
 constexpr int framesPerSecond = 30;
 constexpr int frameCount = 2 * framesPerSecond;
+constexpr int halfFrameCount = frameCount / 2;
+constexpr float pi = 3.14159;
 
 Scene& sceneForFrame(Scene& scene, int frame) {
     auto sphere1 = std::dynamic_pointer_cast<Sphere>(scene.objects().at(0));
@@ -32,21 +35,106 @@ Scene& sceneForFrame(Scene& scene, int frame) {
     static const Vec3 initialSphere1Center = sphere1->getCenter();
     static const Vec3 initialSphere2Center = sphere2->getCenter();
     static const Vec3 initialSphere2Orientation = sphere2->getOrientation();
+    static const float radius = sphere1->getRadius();
     static const float totalDisplacementY = -(
         std::abs(initialSphere1Center.y - initialSphere2Center.y)
-        - 2.0f * sphere1->getRadius()
+        - 2.0f * radius
     );
 
     const float t = static_cast<float>(frame) / (frameCount - 1);
     const float displacementY = totalDisplacementY * t;
 
-    sphere2->setCenter(
-        initialSphere2Center + Vec3{0.0f, displacementY, 0.0f}
+    if ( frame < halfFrameCount){
+        sphere2->setCenter(
+            initialSphere2Center + Vec3{0.0f, 2 * displacementY, 0.0f}
+        );
+        sphere2->setOrientation(initialSphere2Orientation
+            - Vec3({frame * totalDisplacementY / halfFrameCount, 0.0f, 0.0f}));
+    } else {
+        sphere1->setCenter(
+            initialSphere1Center + Vec3{0.0f, displacementY - totalDisplacementY / 2.0f, 0.0f}
+        );
+        sphere1->setOrientation(initialSphere2Orientation
+            - Vec3({frame * totalDisplacementY / halfFrameCount, 0.0f, 0.0f}));
+    }
+    
+
+    return scene;
+}
+
+[[maybe_unused]] Scene& sceneForFrameTransform(Scene& scene, int frame) {
+    auto sphere1 = std::dynamic_pointer_cast<Sphere>(scene.objects().at(0));
+    auto sphere2 = std::dynamic_pointer_cast<Sphere>(scene.objects().at(1));
+    if (!sphere1 || !sphere2) {
+        return scene;
+    }
+
+    static const Vec3 initialSphere1Center = sphere1->getCenter();
+    static const Vec3 initialSphere2Center = sphere2->getCenter();
+    static const Vec3 initialSphere1Orientation = sphere1->getOrientation();
+    static const Vec3 initialSphere2Orientation = sphere2->getOrientation();
+    static const float radius = sphere1->getRadius();
+    static const float totalDisplacementY = -(
+        std::abs(initialSphere1Center.y - initialSphere2Center.y)
+        - 2.0f * radius
     );
-    sphere2->setOrientation(
-        initialSphere2Orientation
-        + Vec3{-displacementY / sphere2->getRadius(), 0.0f, 0.0f}
-    );
+
+    const auto orientationTransform = [](const Vec3& orientation) {
+        return Transform::rotationZ(orientation.z)
+            * Transform::rotationY(orientation.y)
+            * Transform::rotationX(orientation.x);
+    };
+
+    const auto relativeOrientationTransform = [&](const Vec3& initial,
+                                                   const Vec3& current) {
+        return orientationTransform(current)
+            * Transform::rotationX(-initial.x)
+            * Transform::rotationY(-initial.y)
+            * Transform::rotationZ(-initial.z);
+    };
+
+    const float t = static_cast<float>(frame) / (frameCount - 1);
+    const float displacementY = totalDisplacementY * t;
+
+    if (frame < halfFrameCount) {
+        const Vec3 displacement{0.0f, 2.0f * displacementY, 0.0f};
+        const Vec3 orientation = initialSphere2Orientation
+            - Vec3{
+                frame * totalDisplacementY / halfFrameCount,
+                0.0f,
+                0.0f
+            };
+        sphere2->setTransform(
+            Transform::translation(displacement)
+            * Transform::translation(initialSphere2Center)
+            * relativeOrientationTransform(
+                initialSphere2Orientation,
+                orientation
+            )
+            * Transform::translation(-initialSphere2Center)
+        );
+    } else {
+        const Vec3 displacement{
+            0.0f,
+            displacementY - totalDisplacementY / 2.0f,
+            0.0f
+        };
+        const Vec3 orientation = initialSphere2Orientation
+            - Vec3{
+                frame * totalDisplacementY / halfFrameCount,
+                0.0f,
+                0.0f
+            };
+        sphere1->setTransform(
+            Transform::translation(displacement)
+            * Transform::translation(initialSphere1Center)
+            * relativeOrientationTransform(
+                initialSphere1Orientation,
+                orientation
+            )
+            * Transform::translation(-initialSphere1Center)
+        );
+    }
 
     return scene;
 }
@@ -86,7 +174,7 @@ int main() {
     std::filesystem::create_directories(framesDirectory);
 
     for (int frame = 0; frame < frameCount; ++frame) {
-        const Scene& animatedScene = sceneForFrame(scene, frame);
+        const Scene& animatedScene = sceneForFrameTransform(scene, frame);
         const std::vector<std::uint8_t> pixels =
             frameRenderer.render(animatedScene, renderer);
         const std::filesystem::path outputPath = framePath(framesDirectory, frame);

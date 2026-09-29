@@ -13,8 +13,8 @@ std::optional<Hit> Raymarching::raymarch(const Scene& scene, const Ray& ray, flo
             Hit hit;
             hit.t = traveled;
             hit.point = point;
-            hit.normal = object->normal(point);
-            hit.uv = object->textureCoordinates(point);
+            hit.normal = object->transformedNormal(point);
+            hit.uv = object->transformedTextureCoordinates(point);
             hit.object = object;
             return hit;
         }
@@ -40,11 +40,11 @@ std::optional<Hit> Raymarching::closestHit(const Scene& scene,
 std::optional<float> Raymarching::exitDistance(const Object& object,
                                                const Ray& ray,
                                                float maxDistance) const {
-    if (object.sdf(ray.origin) >= 0.0f) { return std::nullopt; }
+    if (object.transformedSdf(ray.origin) >= 0.0f) { return std::nullopt; }
 
     float traveled = 0.0f;
     for (int step = 0; step < maxSteps_; ++step) {
-        const float distance = object.sdf(ray.at(traveled));
+        const float distance = object.transformedSdf(ray.at(traveled));
         if (distance >= 0.0f) { return traveled; }
 
         traveled += std::max(-distance, surfaceEpsilon_);

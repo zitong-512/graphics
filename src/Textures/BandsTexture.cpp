@@ -1,6 +1,7 @@
 #include "Textures/BandsTexture.hpp"
 
 #include <algorithm>
+#include <cmath>
 #include <stdexcept>
 
 BandsTexture::BandsTexture(Vec3 color0, Vec3 color1, int bandCount)
@@ -15,12 +16,19 @@ BandsTexture::BandsTexture(Vec3 color0, Vec3 color1, int bandCount)
 }
 
 Vec3 BandsTexture::sample(const Vec2& uv) const {
-    const int band = std::min(
-        static_cast<int>(uv.y * static_cast<float>(bandCount_)),
-        bandCount_ - 1
-    );
+    const float wobble =
+        0.05f * std::sin(20.0f * uv.x);
+    float v = std::clamp(uv.y + wobble, 0.0f, 1.0f);
+    //float v = uv.y;
 
-    if (band % 2 == 0) {
+    float bandLength = 1 / (float) bandCount_;
+
+    int n = 0;
+    for(int i = 0; i * bandLength < v; i++){
+        n = i;
+    }
+
+    if (n % 2 == 0){
         return color0_;
     }
     return color1_;

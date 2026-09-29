@@ -23,7 +23,7 @@ std::pair<float, const Object*> Scene::sdf(const Vec3& point) const {
             continue;
         }
 
-        const float distance = object->sdf(point);
+        const float distance = object->transformedSdf(point);
         if (distance < closestDistance) {
             closestDistance = distance;
             closestObject = object.get();

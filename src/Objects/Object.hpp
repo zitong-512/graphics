@@ -4,6 +4,7 @@
 #include "Shaders/Shader.hpp"
 #include "Utilities/Hit.hpp"
 #include "Utilities/Ray.hpp"
+#include "Utilities/Transform.hpp"
 #include "Utilities/Vec3.hpp"
 
 #include <memory>
@@ -21,6 +22,16 @@ public:
     virtual Vec3 normal(const Vec3& point) const;
     virtual Vec2 textureCoordinates(const Vec3& point) const;
 
+    float transformedSdf(const Vec3& point) const;
+    std::optional<Hit> transformedHit(const Ray& ray,
+                                      float intersectionEpsilon,
+                                      float maxDistance) const;
+    Vec3 transformedNormal(const Vec3& point) const;
+    Vec2 transformedTextureCoordinates(const Vec3& point) const;
+
+    const Transform& transform() const { return transform_; }
+    void setTransform(const Transform& transform) { transform_ = transform; }
+
     const Material& material() const { return material_; }
     const Shader& shader() const { return *shader_; }
 
@@ -34,6 +45,7 @@ public:
 private:
     Material material_;
     std::shared_ptr<const Shader> shader_;
+    Transform transform_;
 };
 
 using ObjectPtr = std::shared_ptr<Object>;
