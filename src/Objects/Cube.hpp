@@ -14,6 +14,9 @@ public:
           center_(center),
           radius_(radius) {}
 
+    void setCenter(const Vec3& center) { center_ = center; }
+    const Vec3& getCenter() const { return center_; }
+
     float sdf(const Vec3& point) const override;
     std::optional<Hit> hit(const Ray& ray, float intersectionEpsilon, float maxDistance) const override;
 

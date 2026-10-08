@@ -4,18 +4,14 @@
 #include <cmath>
 #include <vector>
 
-/*
-Refraction exercises (complete them in this order):
-
-1. Compute cos1 from the incident direction and the oriented surface normal.
-2. Compute sin1 from cos1 using the Pythagorean identity.
-3. Apply Snell's law to compute sin2, then keep the total-internal-reflection check.
-4. Compute cos2 from sin2. The final direction expression is already provided.
-5. In refractionColor, replace the fixed entry ray with a call to refractedRay
-   that moves from air into the object.
-6. Replace the fixed exit ray with a call to refractedRay that moves from the
-   object back into air.
-*/
+namespace {
+    Material materialAt(const Hit& hit) {
+        const Material& material = hit.object->material();
+        return material.materialTexture
+            ? material.materialTexture->sample(hit.uv)
+            : material;
+    }
+}
 
 float Renderer::shadow(const Scene& scene, const Hit& hit, const PointLight& light) const {
     const Vec3 toLight = light.position() - hit.point;
@@ -69,7 +65,7 @@ Vec3 Renderer::color(const Scene& scene, const Ray& ray, int depth) const {
     if (!hit || hit->object == nullptr) { return scene.background(); }
 
     const Vec3 surfaceColor = localColor(scene, *hit);
-    const Material& material = hit->object->material();
+    const Material material = materialAt(*hit);
     const float reflectiveness = std::clamp(material.reflectiveness, 0.0f, 1.0f);
     const float transmission =
         std::clamp(material.transmissivity, 0.0f, 1.0f - reflectiveness);
@@ -89,8 +85,9 @@ Vec3 Renderer::color(const Scene& scene, const Ray& ray, int depth) const {
 /* Local color */
 
 Vec3 Renderer::localColor(const Scene& scene, const Hit& hit) const {
+    const Material material = materialAt(hit);
     return hit.object->shader().shade(
-        hit, hit.object->material(), scene.camera(), visibleLights(scene, hit));
+        hit, material, scene.camera(), visibleLights(scene, hit));
 }
 
 /* Reflections */
@@ -147,9 +144,7 @@ Vec3 Renderer::refractionColor(
     const Scene& scene, const Ray& incomingRay, const Hit& hit) const {
     [[maybe_unused]] constexpr float airRefractiveIndex = 1.0f;
     [[maybe_unused]] const float objectRefractiveIndex =
-        hit.object->material().refractiveIndex;
-
-    // Exercise 5: replace this fixed straight-through ray.
+        materialAt(hit).refractiveIndex;
 
     const std::optional<Ray> entryRay = refractedRay(incomingRay, hit, airRefractiveIndex, objectRefractiveIndex);
     if (!entryRay) { return scene.background(); }
@@ -164,6 +159,13 @@ Vec3 Renderer::refractionColor(
         hit.object->transformedTextureCoordinates(exitPoint),
         hit.object
     };
+
+    /*
+     TODO 
+     Use `materialAt` to get the material at the exit point
+     and if it is not transmissive, shade the inside of the object.
+    */ 
+
     const std::optional<Ray> exitRay = refractedRay(*entryRay, exitHit, objectRefractiveIndex, airRefractiveIndex);
 
     // Exercise 6: replace this fixed straight-through ray.

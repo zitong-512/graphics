@@ -3,10 +3,11 @@
 #include <algorithm>
 #include <cmath>
 #include <stdexcept>
+#include <utility>
 
-BandsTexture::BandsTexture(Vec3 color0, Vec3 color1, int bandCount)
-    : color0_(color0),
-      color1_(color1),
+BandsTexture::BandsTexture(Material material0, Material material1, int bandCount)
+    : material0_(std::move(material0)),
+      material1_(std::move(material1)),
       bandCount_(bandCount) {
     if (bandCount_ <= 0) {
         throw std::invalid_argument(
@@ -15,7 +16,7 @@ BandsTexture::BandsTexture(Vec3 color0, Vec3 color1, int bandCount)
     }
 }
 
-Vec3 BandsTexture::sample(const Vec2& uv) const {
+Material BandsTexture::sample(const Vec2& uv) const {
     const float wobble =
         0.05f * std::sin(20.0f * uv.x);
     float v = std::clamp(uv.y + wobble, 0.0f, 1.0f);
@@ -29,7 +30,9 @@ Vec3 BandsTexture::sample(const Vec2& uv) const {
     }
 
     if (n % 2 == 0){
-        return color0_;
+        return material0_;
     }
-    return color1_;
+    Material material = material1_;
+    material.objectColor = material.objectColor * (1.0f - (v - n * bandLength) / bandLength);
+    return material;
 }

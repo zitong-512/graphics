@@ -15,14 +15,16 @@ struct Material {
              TexturePtr colorTextureValue = nullptr,
              float reflectivenessValue = 0.0f,
              float transmissivityValue = 0.0f,
-             float refractiveIndexValue = 1.5f)
+             float refractiveIndexValue = 1.5f,
+             MaterialTexturePtr materialTextureValue = nullptr)
         : objectColor(objectColorValue),
           specularColor(specularColorValue),
           shininess(shininessValue),
           colorTexture(std::move(colorTextureValue)),
           reflectiveness(reflectivenessValue),
           transmissivity(transmissivityValue),
-          refractiveIndex(refractiveIndexValue) {}
+          refractiveIndex(refractiveIndexValue),
+          materialTexture(std::move(materialTextureValue)) {}
 
     Vec3 objectColor{0.4f, 0.4f, 0.85f};
     Vec3 specularColor{1.0f, 1.0f, 1.0f};
@@ -38,6 +40,7 @@ struct Material {
     const Vec3& getColor() const { return objectColor; }
 
     TexturePtr colorTexture;
+    MaterialTexturePtr materialTexture;
 
     Vec3 colorAt(const Vec2& uv) const {
         return colorTexture ? colorTexture->sample(uv) : objectColor;
