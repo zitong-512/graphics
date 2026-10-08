@@ -165,10 +165,18 @@ Vec3 Renderer::refractionColor(
      Use `materialAt` to get the material at the exit point
      and if it is not transmissive, shade the inside of the object.
     */ 
+    Material hitMaterial = materialAt(exitHit);
+
 
     const std::optional<Ray> exitRay = refractedRay(*entryRay, exitHit, objectRefractiveIndex, airRefractiveIndex);
+    const Hit coloredtHit{
+        *exit,
+        exitPoint,
+        - hit.object->transformedNormal(exitPoint),
+        hit.object->transformedTextureCoordinates(exitPoint),
+        hit.object
+    };
 
-    // Exercise 6: replace this fixed straight-through ray.
     if (!exitRay) { return scene.background(); }
 
     const std::optional<Hit> refractedHit = closestHit(scene, *exitRay, maxDistance_);

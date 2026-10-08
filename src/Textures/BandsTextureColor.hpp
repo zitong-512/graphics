@@ -1,15 +1,16 @@
 #pragma once
 
 #include <Textures/Texture.hpp>
+#include <Materials/Material.hpp>
 
-class BandsTextureColor final : public Texture {
+class BandsTextureColor final : public MaterialTexture {
 public:
-    BandsTextureColor(Vec3 color0, Vec3 color1, int bandCount = 10);
+    BandsTextureColor(Material material0, Material material1, int bandCount = 10);
 
-    Vec3 sample(const Vec2& uv) const override;
+    Material sample(const Vec2& uv) const override;
 
 private:
-    Vec3 color0_;
-    Vec3 color1_;
+    Material material0_;
+    Material material1_;
     int bandCount_;
 };

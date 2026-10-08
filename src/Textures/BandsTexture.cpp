@@ -18,7 +18,7 @@ BandsTexture::BandsTexture(Material material0, Material material1, int bandCount
 
 Material BandsTexture::sample(const Vec2& uv) const {
     const float wobble =
-        0.05f * std::sin(20.0f * uv.x);
+        0.05f * std::sin(20.0f * uv.x) + std::sin(7.5f * uv.x);
     float v = std::clamp(uv.y + wobble, 0.0f, 1.0f);
     //float v = uv.y;
 

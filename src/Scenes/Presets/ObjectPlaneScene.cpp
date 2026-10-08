@@ -43,23 +43,27 @@ ScenePreset scenes::objectPlane::makeScene() {
         {1.0f, 1.0f, 1.0f},
         32.0f
     };
+    const Material baseObjectMaterial2{
+        {0.7f, 0.8f, 0.3f},
+        {0.0f, 1.0f, 0.6f},
+        32.0f
+    };
     Material objectMaterial = baseObjectMaterial;
-    objectMaterial.colorTexture = std::make_shared<BandsTextureColor>(
-        Vec3{0.04f, 0.12f, 0.22f},
-        Vec3{0.45f, 0.85f, 1.0f},
-        10
-    );
+    Material objectMaterial2 = baseObjectMaterial2;
+    Material sphereMaterial = baseObjectMaterial;
+
     objectMaterial.reflectiveness = 0.0f;
-    objectMaterial.transmissivity = 0.0f;
-    objectMaterial.refractiveIndex = 1.5f;
+    objectMaterial.transmissivity = 1.0f;
+    objectMaterial.refractiveIndex = 1.0f;
     constexpr float objectRadius = 0.5f;
     const Vec3 objectCenter{0.0f, 0.0f, 1.0f};
     const auto objectShader = std::make_shared<BlinnPhongShader>();
 
+    sphereMaterial.materialTexture = std::make_shared<BandsTextureColor> (objectMaterial, objectMaterial2, 10);
     ObjectPtr sphere = std::make_shared<Sphere>(
         objectCenter + Vec3({0.0f, -objectRadius * 2, 0.0f}),
         objectRadius,
-        objectMaterial,
+        std::move(sphereMaterial),
         objectShader
     );
     ObjectPtr sphere2 = std::make_shared<Cube>(
